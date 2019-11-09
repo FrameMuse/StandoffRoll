@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>StandoffRoll</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700&amp;display=swap" rel="stylesheet">
+    <!--OTHER-->
+
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <div class="topbar__tools">
+                <img src="assets/img/logo.png" class="topbar__logo">
+                <div class="topbar__volume">
+                    <span class="built-icon__volume"></span>
+                </div>
+                <div class="dropdown-menu button">
+                    <div class="dropdown-menu__current">English</div>
+                    <div class="dropdown-menu__menu">
+                        <div class="dropdown-menu__unit">English</div>
+                        <div class="dropdown-menu__unit">Russian</div>
+                    </div>
+                </div>
+            </div>
+            <nav class="topbar-menu">
+                <a href="#" class="topbar-menu__item topbar-menu__item--selected"><span class="built-icon__house"></span>Home</a>
+                <a href="#" class="topbar-menu__item"><span class="built-icon__bag"></span>Shop</a>
+                <a href="#" class="topbar-menu__item"><span class="built-icon__time-line"></span>Timeline</a>
+                <a href="#" class="topbar-menu__item"><span class="built-icon__chart"></span>Top</a>
+                <a href="#" class="topbar-menu__item"><span class="built-icon__bookmark"></span>FAQ</a>
+            </nav>
+            <div class="topbar-profile">
+                <img src="assets/img/avatar.png" class="topbar-profile__avatar">
+                <div class="topbar-profile__info">
+                    <div class="topbar-profile__username">Geory</div>
+                    <div class="topbar-profile__balance">
+                        <span class="topbar-profile__coloured">Баланс:</span>
+                        <span>1.0 P</span>
+                    </div>
+                </div>
+                <div class="topbar-profile__deposit button1">Deposit</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="sidebar">
+            <div class="sidebar__part">
+                <div class="sidebar__title">Playing rooms</div>
+                <nav class="sidebar__menu">
+                    <div class="sidebar__unit sidebar__unit--selected">
+                        <span class="sidebar__unit--name">Default</span>
+                        <span class="sidebar__unit--desc">Min. bet 10</span>
+                    </div>
+                    <div class="sidebar__unit">
+                        <span class="sidebar__unit--name">Low mode</span>
+                        <span class="sidebar__unit--desc">Max. bet 10</span>
+                    </div>
+                    <div class="sidebar__unit">
+                        <span class="sidebar__unit--name">High mode</span>
+                        <span class="sidebar__unit--desc">Min. bet 1000</span>
+                    </div>
+                </nav>
+            </div>
+            <div class="sidebar__part">
+                <div class="sidebar__title">Last play</div>
+                <div class="sidebar-facts">
+                    <div class="sidebar-facts__user">
+                        <img src="assets/img/player.png" class="sidebar-facts__user-image">
+                        <span class="sidebar-facts__username">Interesting</span>
+                    </div>
+                    <div class="sidebar-facts__stats">
+                        <section>
+                            <span class="gray">Benefit</span>
+                            <span class="green">8961 $</span>
+                        </section>
+                        <section>
+                            <span class="gray">Chance</span>
+                            <span class="green">1%</span>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar__part">
+                <div class="sidebar__title">Today's lucky man</div>
+                <div class="sidebar-facts">
+                    <div class="sidebar-facts__user">
+                        <img src="assets/img/player.png" class="sidebar-facts__user-image">
+                        <span class="sidebar-facts__username">Interesting</span>
+                    </div>
+                    <div class="sidebar-facts__stats">
+                        <section>
+                            <span class="gray">Benefit</span>
+                            <span class="green">8961 $</span>
+                        </section>
+                        <section>
+                            <span class="gray">Chance</span>
+                            <span class="green">1%</span>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stdf2-page">
+            <div class="stdf2-stats">
+                <div class="stdf2-stats__one">
+                    <span class="stdf2-stats__digits">481</span>
+                    <span class="stdf2-stats__words">Online now</span>
+                </div>
+                <div class="stdf2-stats__one">
+                    <span class="stdf2-stats__digits">174</span>
+                    <span class="stdf2-stats__words">Plays \ Today</span>
+                </div>
+                <div class="stdf2-stats__one">
+                    <span class="stdf2-stats__digits">1 678</span>
+                    <span class="stdf2-stats__words">Plays \ All time</span>
+                </div>
+                <div class="stdf2-stats__one">
+                    <span class="stdf2-stats__digits">14 103 $</span>
+                    <span class="stdf2-stats__words">Last play</span>
+                </div>
+                <div class="stdf2-stats__one">
+                    <span class="stdf2-stats__digits">419 851 $</span>
+                    <span class="stdf2-stats__words">Biggest benefit</span>
+                </div>
+            </div>
+            <div class="stdf2-page__piece stdf2-game stdf2-game--high" id="07891">
+                <div class="stdf2-game__details">
+                    <div class="stdf2-game-aspect">
+                        <span class="stdf2-game-aspect__name">Game</span>
+                        <span class="stdf2-game-aspect__value">#07891</span>
+                    </div>
+                    <div class="stdf2-game-aspect">
+                        <span class="stdf2-game-aspect__name">Game bank</span>
+                        <span class="stdf2-game-aspect__value">8 960 $</span>
+                    </div>
+                    <div id="timer32"></div>
+                </div>
+                <div class="stdf2-game__details">
+                    <div class="stdf2-game-progress"></div>
+                    <button class="stdf2-game__deposit">Bet your skins</button>
+                </div>
+                <div class="stdf2-game__details stdf2-game__details--centred">
+                    <div class="stdf2-game-aspect">
+                        <span class="stdf2-game-aspect__name gray">You betted</span>
+                        <span class="stdf2-game-aspect__value">3 skins</span>
+                    </div>
+                    <div class="stdf2-game-aspect">
+                        <span class="stdf2-game-aspect__name gray">Your chance</span>
+                        <span class="stdf2-game-aspect__value">3 %</span>
+                    </div>
+                </div>
+                <div class="stdf2-game-joiners">
+                    <div class="stdf2-game-joiners__cover stdf2-game-joiners__cover--left"></div>
+                    <div class="stdf2-game-joiners__inner">
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                        <div class="stdf2-game-joiners__joiner">
+                            <img src="assets/img/player2.png" class="stdf2-game-joiners__avatar">
+                            <span class="stdf2-game-joiners__chance">56%</span>
+                        </div>
+                    </div>
+                    <div class="stdf2-game-joiners__cover stdf2-game-joiners__cover--right"></div>
+                </div>
+                <div class="stdf2-game-bets">
+                    <div class="stdf2-game-bets__bet">
+                        <div class="stdf2-game-bets__user">
+                            <img src="assets/img/player2.png" class="stdf2-game-bets__avatar">
+                            <span class="stdf2-game-bets__username">Interesting</span>
+                            <span class="stdf2-game-bets__total">1 560 $</span>
+                        </div>
+                        <div class="stdf2-game-bets__skins">
+                            <div class="stdf2-game-bets__text">
+                                <div>
+                                    <small>Nickname has chosen these skins</small>
+                                    <span>(10)</span>
+                                </div>
+                                <div class="stdf2-game-bets__text--right">
+                                    <small>
+                                        Ticket
+                                        <span class="green"> #1 </span>
+                                        -
+                                        <span class="green">#</span>
+                                    </small>
+                                    <span>671</span>
+                                </div>
+                            </div>
+                            <div class="stdf2-skins">
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stdf2-game-bets__bet">
+                        <div class="stdf2-game-bets__user">
+                            <img src="assets/img/player2.png" class="stdf2-game-bets__avatar">
+                            <span class="stdf2-game-bets__username">Interesting</span>
+                            <span class="stdf2-game-bets__total">1 560 $</span>
+                        </div>
+                        <div class="stdf2-game-bets__skins">
+                            <div class="stdf2-game-bets__text">
+                                <div>
+                                    <small>Nickname has chosen these skins</small>
+                                    <span>(10)</span>
+                                </div>
+                                <div class="stdf2-game-bets__text--right">
+                                    <small>
+                                        Ticket
+                                        <span class="green"> #1 </span>
+                                        -
+                                        <span class="green">#</span>
+                                    </small>
+                                    <span>671</span>
+                                </div>
+                            </div>
+                            <div class="stdf2-skins">
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon stdf2-weapon--red">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon stdf2-weapon--blue">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon stdf2-weapon--gold">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon stdf2-weapon--pink">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon stdf2-weapon--skyblue">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon stdf2-weapon--purple">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon stdf2-weapon--blue">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                                <div class="stdf2-skins__unit">
+                                    <div class="stdf2-weapon">
+                                        <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                                        <div class="stdf2-weapon__quality"></div>
+                                    </div>
+                                    <div class="stdf2-skins__value">3 290 $</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stdf2-game-safety">
+                    <div class="stdf2-game-safety__border"></div>
+                    <div class="stdf2-game-safety__title">Игра началась! Вносите предметы!</div>
+                    <div class="stdf2-game-safety__md5">
+                        <a href="#xer">Honest play</a>
+                        <span> / Play hash: 09s8g9bfdhgdfgbhf8gdsbfdf9gb9dfusgbsd9fugbdfuy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer__zalupa">
+                    <div class="footer__ref">
+                        <img src="assets/img/logo.png" class="footer__logo">
+                        <div class="social-links">
+                            <a href="#" class="social-links__link social-links__link--vk"></a>
+                            <a href="#" class="social-links__link social-links__link--instagram"></a>
+                            <a href="#" class="social-links__link social-links__link--steam"></a>
+                            <a href="#" class="social-links__link social-links__link--youtube"></a>
+                        </div>
+                        <img src="assets/img/standoffcard.png" class="footer__logo">
+                        <img src="assets/img/standoffcase.png" class="footer__logo">
+                    </div>
+                    <div class="to-top">
+                        <span class="built-icon__chevron-up"></span>
+                    </div>
+                </div>
+                <!--div class="paysys">
+                    <img src="https://standoffcase.ru/assets/img/payments_systems/mastercard.svg" class="paysys__image">
+                    <img src="https://standoffcase.ru/assets/img/payments_systems/webmoney.svg" class="paysys__image">
+                    <img src="https://standoffcase.ru/assets/img/payments_systems/qiwi.svg" class="paysys__image">
+                    <img src="https://standoffcase.ru/assets/img/payments_systems/yandex.svg" class="paysys__image">
+                    <img src="https://standoffcase.ru/assets/img/payments_systems/visa.svg" class="paysys__image">
+                </div-->
+                <div class="copyright">
+                    <a href="/" class="copyright__link">support@standoffroll.com</a>
+                    <a href="/agreement" class="copyright__link">Terms of use</a>
+                    <a href="/contacts" class="copyright__link">Contacts</a>
+                    <span class="copyright__text">Copyright StandoffRoll.com</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="popup" hidden>
+        <div class="popup__cover"></div>
+        <div class="popup-window scale-out">
+            <div class="popup-window__close">✖</div>
+            <div class="popup-window__article">
+                <span class="popup-window__title"></span>
+                <span class="popup-window__summary"></span>
+            </div>
+            <div class="popup-window__content"></div>
+            <div class="popup-window__help">Есть вопросы? Пишите в <a href="#vk" class="popup-window__marked">группу
+                    поддержки VK</a></div>
+        </div>
+    </div>
+    <footer>
+        <!--Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="assets/js/game.js"></script>
+        <script>
+            const stdf2_game_progress = new game_progress(".stdf2-game-progress", {
+                max: 12,
+                autoUpdate: true, // Default: false
+                progress: {
+                  //mode: "percent", // По-умолчанию в процентах
+                    mode: "tillMax", // Прогресс до max, проценты считаються сами
+                    amount: 12, // Указывается либо от 0 до 100, либо от 0 до max
+                },
+                text: {
+                    separate: "from", // Суда можно поставить парсер языка 
+                },
+            });
+
+            // Обновлять прогресс таким образом
+            stdf2_game_progress.progress = 10;
+            // Так же, если надо, можно поменять max
+            stdf2_game_progress.max = 9; // Ошибка т.к. max не может быть меньше прогресса
+
+            // После всех остальных дел нужно применить изменения, в настройках есть возможно включить постоянное обновление
+            //stdf2_game_progress.update();
+        </script>
+        <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/popup.js"></script>
+    </footer>
+</body>
+</html>
