@@ -33,6 +33,8 @@ function popup($window, options = {}) {
     switch ($window) {
         case "top_up":
             wEdit({
+                title: title,
+                summary: summary,
                 content: `
                     <div class="popup-window__top-up">
                         <input type="text" class="popup-window__top-up--big-input" placeholder="${wText("other.placeholders.promocode")}">
@@ -70,11 +72,210 @@ function popup($window, options = {}) {
             VK.Widgets.Group("vk_groups", { mode: 1, no_cover: 1 }, 187346506);
             break;
         
-        case "1":
+        case "items_":
             wEdit({
-                title: 'asd',
-                summary: 'asd',
-                content: 'asd',
+                title: title,
+                summary: summary,
+                content: `<div class="user-skins user-skins--scrolling user-skins--small">
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+    <div class="user-skins__item stdf2-skins">
+        <div class="user-skins__item--title">
+            <span>M9 Bayonet</span>
+            <span>Skin Name</span>
+        </div>
+    
+        <div class="stdf2-skins__unit">
+            <div class="stdf2-weapon stdf2-weapon--red">
+                <img src="assets/img/knife.png" class="stdf2-weapon__image">
+                <div class="stdf2-weapon__quality"></div>
+            </div>
+            <div class="stdf2-skins__value">3 290 $</div>
+        </div>
+        <div class="stdf2-skins__options">
+            <button class="button button--gray">withdraw</button>
+            <button class="button1 button1--orange">Sell</button>
+        </div>
+    </div>
+</div>`,
             });
             break;
 

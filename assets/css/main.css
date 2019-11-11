@@ -1168,6 +1168,13 @@ main {
     flex-wrap: wrap;
     padding-bottom: 3.5em;
 }
+.user-skins--scrolling {
+    height: 365px;
+    overflow-y: scroll;
+}
+.user-skins--small {
+    font-size: 14px;
+}
 
 .user-skins__item {
     display: grid;
