@@ -78,3 +78,16 @@ $(".faq__header").click(function () {
             .find(".faq__header--icon").html("&minus;");
     }
 });
+
+
+// Language choosing
+
+$(".dropdown-menu").click(function () {
+    var menu = $(this).find(".dropdown-menu__menu");
+    
+    if (menu.hasClass("dropdown-menu__menu--deployed")) {
+        menu.removeClass("dropdown-menu__menu--deployed");
+    } else {
+        menu.addClass("dropdown-menu__menu--deployed");
+    }
+});

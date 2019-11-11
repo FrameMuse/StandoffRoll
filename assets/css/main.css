@@ -19,6 +19,7 @@ body {
 header {
     background: rgba(255,255,255,0.01);
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    z-index: 8;
 }
 
 .hidden {
@@ -52,12 +53,13 @@ button, input[type="submit"] {
     cursor: pointer;
 }
 
-.button.button, .button--gray {
+.button, .button--gray {
     padding: 0.625em 1em;
     border: 0.1rem solid #3a3a3a;
     border-radius: 4px;
     color: #3a3a3a;
     transition: .15s linear color, .15s linear border-color, .15s linear background;
+    user-select: none;
 }
 .button:hover, .button.button--gray {
     background: #3a3a3a;
@@ -171,17 +173,22 @@ button, input[type="submit"] {
 /* Dropdown Menu */
 
 .dropdown-menu {
-    font-size: inherit;
+    display: grid;
     cursor: pointer;
+    width: 5.75em;
 }
 
 .dropdown-menu__current {
     font-size: inherit;
+    z-index: 3;
 }
 
 .dropdown-menu__menu {
-    display: none;
-    padding: ;
+    position: absolute;
+    transform: translateY(-50%) scaleY(0);
+    width: 100%;
+    transition: 0.15s linear transform;
+    z-index: 2;
 }
 
 

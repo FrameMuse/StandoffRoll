@@ -165,12 +165,15 @@ const game_timer = new class {
     }
 
     async getTimerUpdate(name) {
-        return await this.timers[name];
+        if (this.timers[name] != undefined)
+            return await this.timers[name];
+        else
+            throw "Wrong name (" + name + ")";
     }
 };
 
 game_timer.setTimer("jopa", {
-    title: "Ends in: ",
+    title: "Ends in:",
     insteadOf: "#timer32",
     startWith: 5,
     orientaion: "right",
