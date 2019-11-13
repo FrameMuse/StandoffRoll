@@ -138,30 +138,36 @@ const game_timer = new class {
         return [forSeconds, forMicroSeconds];
     }
 
-    async __Timer(startWith = 0, updatees = [], divider = null) {
+    __Timer(startWith = 0, updatees = [], divider = null) {
         var seconds = startWith;
         var microSeconds = 0;
 
         let issue = new Promise((resolve, reject) => {
-            var interval = setInterval(async () => {
+            // MicroSeconds
+            var interval2 = setInterval(() => {
                 //Counting down
-                if (microSeconds < 1) {
-                    microSeconds = 9;
-                    seconds--;
-                } else microSeconds--;
-
+                if (microSeconds < 1) microSeconds = 9; else microSeconds--;
+                // Updating
+                $(updatees[1]).html(microSeconds);
+            }, 100);
+            // Seconds
+            var interval = setInterval(() => {
+                //Counting down
+                seconds--;
                 // Updating
                 $(updatees[0]).html(seconds + divider);
-                $(updatees[1]).html(microSeconds);
+
+                window.performance.now();
 
                 if (seconds == 0 && microSeconds == 0) {
                     clearInterval(interval);
+                    clearInterval(interval2);
                     resolve();
                 }
-            }, 100);
+            }, 1000);
         });
         
-        return await issue;
+        return issue;
     }
 
     async getTimerUpdate(name) {
@@ -175,7 +181,7 @@ const game_timer = new class {
 game_timer.setTimer("jopa", {
     title: "Ends in:",
     insteadOf: "#timer32",
-    startWith: 5,
+    startWith: 9,
     orientaion: "right",
     divider: ".",
 });
