@@ -1166,11 +1166,13 @@ main {
 .user-skins {
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
     padding-bottom: 3.5em;
 }
 .user-skins--scrolling {
-    height: 365px;
+    max-height: 365px;
     overflow-y: scroll;
+    padding: 0;
 }
 .user-skins--small {
     font-size: 14px;
@@ -1410,7 +1412,7 @@ button.motto:hover, a.motto:hover {
 }
 
 .popup-window__content {
-    display: grid;
+    /* display: grid; */
     justify-content: center;
     margin: 1.75em 0;
 }
@@ -1453,6 +1455,7 @@ button.motto:hover, a.motto:hover {
 
 .popup-window__top-up {
     display: grid;
+    justify-content: space-around;
     text-align: center;
     margin-bottom: 2em;
 }

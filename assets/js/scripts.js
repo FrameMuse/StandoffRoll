@@ -20,6 +20,10 @@ function addDivTo(context, classname) {
     context.append("<div class=" + classname + "></div>")
 }
 
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Joiners
 
 var Jwidth = $(".stdf2-game-joiners").width();

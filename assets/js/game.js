@@ -104,13 +104,8 @@ const game_timer = new class {
     setTimer(name = null, settings = {}) {
         // Create a Timer block
         var timerArray = this.createTimerBlock(settings); // returns array of elements for changing
-
         // Set update
-        this.timers[name] = new Promise(async (resolve) => {
-            await this.__Timer(settings.startWith, timerArray, settings.divider);
-            resolve();
-        });
-
+        this.timers[name] = [timerArray, settings];
         // Starting up the timer
         return this.getTimerUpdate(name);
     }
@@ -140,34 +135,62 @@ const game_timer = new class {
 
     __Timer(startWith = 0, updatees = [], divider = null) {
         var seconds = startWith;
-        var microSeconds = 0;
+        var ms_able = true;
+
+        function ms_update(int = 0) {
+            if (ms_able) $(updatees[1]).html(int);
+        }
+
+        function ms_countdown() {
+            return new Promise(async (resolve) => {
+                for (let index = 9; index >= 0; index--) {
+                    ms_update(index);
+                    await timeout(100);
+                    if (index < 9) resolve();
+                }
+            });
+        }
 
         let issue = new Promise((resolve, reject) => {
-            // MicroSeconds
-            var interval2 = setInterval(() => {
-                //Counting down
-                if (microSeconds < 1) microSeconds = 9; else microSeconds--;
-                // Updating
-                $(updatees[1]).html(microSeconds);
-            }, 100);
+            // Starting out
+            ms_countdown();
+            seconds--;
+            $(updatees[0]).html(seconds + divider);
             // Seconds
-            var interval = setInterval(() => {
-                //Counting down
+            var interval = setInterval(async () => {
+                // Counting down
                 seconds--;
+                ms_countdown();
                 // Updating
                 $(updatees[0]).html(seconds + divider);
 
-                window.performance.now();
-
-                if (seconds == 0 && microSeconds == 0) {
+                // Resolving
+                if (seconds == 0) {
+                    // Clear interval
                     clearInterval(interval);
-                    clearInterval(interval2);
+                    // Wait for microSeconds
+                    await timeout(1000);
+                    ms_update(0);
+                    ms_able = false;
+                    // Resolve
                     resolve();
                 }
             }, 1000);
         });
         
         return issue;
+    }
+
+    begin(name) {       
+        if (!Array.isArray(this.timers[name])) throw "Can't handle this";
+
+        var settings = this.timers[name][1];
+        var timerArray = this.timers[name][0];
+
+        this.timers[name] = new Promise(async (resolve) => {
+            await this.__Timer(settings.startWith, timerArray, settings.divider);
+            resolve();
+        });
     }
 
     async getTimerUpdate(name) {
@@ -185,5 +208,6 @@ game_timer.setTimer("jopa", {
     orientaion: "right",
     divider: ".",
 });
+//game_timer.begin("jopa");
 
 console.log(game_timer.getTimerUpdate("jopa"));
