@@ -96,18 +96,35 @@ class game_progress {
 class game_aspect {}
 
 
-const game_timer = new class {
-    constructor() {
-        this.timers = [];
+class Timer_by_aspect {
+    constructor(insteadOf) {
+        this.timer = [];
+        this.insteadOf = insteadOf;
+        this.ms_count = 9;
+        this.ms_promise = true;
+
+        $(window).focus();
+        $(window).blur(async () => {
+            this.ms_update(0);
+            this.ms_promise = false;
+            console.log("blured");
+            
+        });
+        $(window).focus(() => {
+            this.ms_promise = true;
+            console.log("focused");
+        });
     }
 
-    setTimer(name = null, settings = {}) {
+    setTimer(settings = {}) {
         // Create a Timer block
         var timerArray = this.createTimerBlock(settings); // returns array of elements for changing
         // Set update
-        this.timers[name] = [timerArray, settings];
+        this.timer = [timerArray, settings];
+        this.settings = settings;
+        this.updatees = timerArray;
         // Starting up the timer
-        return this.getTimerUpdate(name);
+        //return this.getTimerUpdate();
     }
 
     createTimerBlock(settings = {}) {
@@ -128,86 +145,40 @@ const game_timer = new class {
         var forMicroSeconds = aspect.find("small").html(0);
 
         // Put our build instead of that
-        const $this = $(settings.insteadOf).replaceWith(HTML_parsed);
+        const $this = $(this.insteadOf).replaceWith(HTML_parsed);
 
         return [forSeconds, forMicroSeconds];
     }
 
-    __Timer(startWith = 0, updatees = [], divider = null) {
-        var seconds = startWith;
-        var ms_able = true;
+    ms_update(int = 0) {
+        $(this.updatees[1]).html(int);
+    }
 
-        function ms_update(int = 0) {
-            if (ms_able) $(updatees[1]).html(int);
-        }
-
-        function ms_countdown() {
-            return new Promise(async (resolve) => {
-                for (let index = 9; index >= 0; index--) {
-                    ms_update(index);
-                    await timeout(100);
-                    if (index < 9) resolve();
-                }
-            });
-        }
-
-        let issue = new Promise((resolve, reject) => {
-            // Starting out
-            ms_countdown();
-            seconds--;
-            $(updatees[0]).html(seconds + divider);
-            // Seconds
-            var interval = setInterval(async () => {
-                // Counting down
-                seconds--;
-                ms_countdown();
-                // Updating
-                $(updatees[0]).html(seconds + divider);
-
-                // Resolving
-                if (seconds == 0) {
-                    // Clear interval
+    ms_countdown() {
+        return new Promise(async (resolve) => {
+            var interval = setInterval(() => {
+                this.ms_count--;
+                this.ms_update(this.ms_count);
+                if ((this.ms_count < 1 && this.ms_promise) || !this.ms_promise) {
                     clearInterval(interval);
-                    // Wait for microSeconds
-                    await timeout(1000);
-                    ms_update(0);
-                    ms_able = false;
-                    // Resolve
+                    this.ms_update(0);
                     resolve();
                 }
-            }, 1000);
-        });
-        
-        return issue;
-    }
-
-    begin(name) {       
-        if (!Array.isArray(this.timers[name])) throw "Can't handle this";
-
-        var settings = this.timers[name][1];
-        var timerArray = this.timers[name][0];
-
-        this.timers[name] = new Promise(async (resolve) => {
-            await this.__Timer(settings.startWith, timerArray, settings.divider);
-            resolve();
+            }, 100);
         });
     }
 
-    async getTimerUpdate(name) {
-        if (this.timers[name] != undefined)
-            return await this.timers[name];
-        else
-            throw "Wrong name (" + name + ")";
+    goDownTo(int = 0) {
+        $(this.updatees[0]).html(int + this.settings.divider);
+        return this.ms_countdown();
     }
 };
 
-game_timer.setTimer("jopa", {
+const game_timer = new Timer_by_aspect("#timer32");
+game_timer.setTimer({
     title: "Ends in:",
-    insteadOf: "#timer32",
     startWith: 9,
     orientaion: "right",
     divider: ".",
 });
-//game_timer.begin("jopa");
-
-console.log(game_timer.getTimerUpdate("jopa"));
+game_timer.goDownTo(6); // Число до которого нужно дойти
