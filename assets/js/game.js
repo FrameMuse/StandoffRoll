@@ -168,9 +168,9 @@ class Timer_by_aspect {
         });
     }
 
-    goDownTo(int = 0) {
+    goDownTo(int = 0, microSeconds = false) {
         $(this.updatees[0]).html(int + this.settings.divider);
-        return this.ms_countdown();
+        if (microSeconds) return this.ms_countdown(); else this.ms_update(0);
     }
 };
 
@@ -181,4 +181,4 @@ game_timer.setTimer({
     orientaion: "right",
     divider: ".",
 });
-game_timer.goDownTo(6); // Число до которого нужно дойти
+game_timer.goDownTo(6, true); // Число до которого нужно дойти
