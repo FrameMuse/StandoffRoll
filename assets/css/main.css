@@ -806,19 +806,19 @@ main {
 
 .faq__header--text {
     font-size: 1.15em;
+    flex: 1;
 }
 
 .faq__summary {
     display: none;
-    font-size: 1em;
     margin-top: 1.25em;
-    margin-left: 3.2em;
-    opacity: 0;
+    line-height: 1.25em;
+    font-size: 1em;
+    color: #b9b9b9;
     transition: 0.125s linear opacity, 0.175s linear margin;
 }
 .faq__header--toggled + .faq__summary {
-    margin-top: 1.5em;
-    opacity: 1;
+    animation: faq-summary-animation .15s linear;
     display: unset;
 }
 
@@ -1758,7 +1758,10 @@ a.copyright__link {
 
 
 
-
+a.s-card {
+    color: #47aa01;
+    text-transform: lowercase;
+}
 
 
 

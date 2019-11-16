@@ -1,0 +1,37 @@
+/* FAQ summary release */
+
+@keyframes faq-summary-animation {
+    0% {
+        top: -2em;
+        opacity: 0;
+    }
+    100% {
+        top: 0em;
+        opacity: 1;
+    }
+}
+
+
+/* Language menu */
+
+.dropdown-menu__menu--deployed {
+    transform: translateY(50%) scaleY(1);
+}
+
+.dropdown-menu__unit {
+    border-radius: unset;
+    border-top: unset;
+}
+
+
+/* Volume disabler */
+
+.built-icon__volume--stick-across {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 1.75em;
+    height: 1.2em;
+    background: url("../img/icons/crossing-line1.png") no-repeat;
+    background-size: 200%;
+}

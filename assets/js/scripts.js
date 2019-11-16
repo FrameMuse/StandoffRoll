@@ -95,3 +95,58 @@ $(".dropdown-menu").click(function () {
         menu.addClass("dropdown-menu__menu--deployed");
     }
 });
+
+
+// Volume disabler
+
+const volume = new class {
+    constructor() {
+        this.parent = ".topbar__volume";
+        this.bunch = ".built-icon__volume";
+        this.stick = ".built-icon__volume--stick-across";
+    }
+
+    turn(option) {
+        // Possible options
+        switch (option) {
+            case "on":
+                this.state = option;
+                this.releaseAnimation("show");
+                break;
+            
+            case "off":
+                this.state = option;
+                this.releaseAnimation("hide");
+                break;
+            
+            default:
+                return this.state;
+                break;
+        }
+    }
+
+    switch() {
+        if (this.state == "on") 
+    }
+
+    releaseAnimation(task) {
+        // Showing
+        if (task == "show") {
+            $(this.stick).animate({
+                height: "0em",
+            }, 300);
+        }
+
+        // Hidding
+        if (task == "hide") {
+            $(this.stick).animate({
+                height: "1.2em",
+            }, 300);
+        }
+    }
+};
+
+
+$(".topbar__volume").click(() => {
+    volume.switch();
+});
