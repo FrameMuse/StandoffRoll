@@ -1567,23 +1567,18 @@ input.popup-window__button[type="text"] {
 
 /* Copyright */
 
-.copyright {
-    display: flex;
-    padding: 80px 120px;
-}
-
 a.copyright__link {
     margin-right: 50px;
     font-size: 18px;
     font-weight: 500;
-    color: #272d39;
+    color: #3f3f3f;
 }
 
 .copyright__text {
     display: flex;
     font-size: 18px;
     font-weight: 500;
-    color: #272d39;
+    color: #3f3f3f;
     flex: 1;
     justify-content: flex-end;
 }
@@ -1739,12 +1734,6 @@ a.copyright__link {
 }
 .copyright__link:first-child {
     margin: 0;
-}
-
-.copyright__text {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
 }
 
 .to-top {
