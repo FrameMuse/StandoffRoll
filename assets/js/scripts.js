@@ -104,6 +104,9 @@ const volume = new class {
         this.parent = ".topbar__volume";
         this.bunch = ".built-icon__volume";
         this.stick = ".built-icon__volume--stick-across";
+        this.state = "on";
+
+        //this.turn("on");
     }
 
     turn(option) {
@@ -126,22 +129,26 @@ const volume = new class {
     }
 
     switch() {
-        if (this.state == "on") 
+        if (this.state == "on") this.turn("off");
+        else
+        if (this.state == "off") this.turn("on");
+
+        return this.state;
     }
 
     releaseAnimation(task) {
         // Showing
-        if (task == "show") {
+        if (task == "hide") {
             $(this.stick).animate({
                 height: "0em",
-            }, 300);
+            }, 400);
         }
 
         // Hidding
-        if (task == "hide") {
+        if (task == "show") {
             $(this.stick).animate({
                 height: "1.2em",
-            }, 300);
+            }, 400);
         }
     }
 };
