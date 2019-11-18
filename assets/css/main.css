@@ -11,7 +11,7 @@ body {
     margin: 0;
     background-color: #101010;
     font-family: "Exo 2", sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 1;
     color: white;
 }
@@ -136,7 +136,7 @@ button, input[type="submit"] {
 /* Centring & Limitting */
 
 .topbar, main {
-    max-width: 1450px;
+    max-width: 1150px;
     margin: 0 auto;
 }
 
@@ -254,7 +254,7 @@ button, input[type="submit"] {
     width: 3.5em;
     height: 3.5em;
     border-radius: 100%;
-    object-fit: none;
+    object-fit: cover;
 }
 
 .topbar-profile__info {
