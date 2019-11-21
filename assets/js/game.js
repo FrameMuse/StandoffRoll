@@ -261,89 +261,89 @@ const stdf2_game = new class {
     }
 
     async start() {
-    for (let index = 4; index >= 0; index--) {
-        stdf2_game_timer.goDownTo(index, true);
-        await timeout(1000);
+        for (let index = 4; index >= 0; index--) {
+            stdf2_game_timer.goDownTo(index, true);
+            await timeout(1000);
+        }
+        stdf2_game.onRunning = () => {
+            // Нужно обязательно продублировать некоторых юзеров в начале и конце для корректной работы, лучше всего по 20 штук с каждой стороны
+
+            // Это тестовая функция, её не надо использовать
+            stdf2_roullete.createBranches(20, true, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+
+            // Это тестовая функция, её не надо использовать
+            stdf2_roullete.createBranches(20, true, stdf2_roullete.branchHTML({
+                image: "assets/img/player3.png",
+                color: "purple",
+            }));
+        };
+        await stdf2_game.stage("running", {
+            header: "И победителем становится...",
+            hash: "09s8g9bfdhgdfgbhf8gdsbfdf9gb9dfusgbsd9fugbdfuy",
+        });
+        stdf2_game.stage("showing-winner");
     }
-    stdf2_game.onRunning = () => {
-        // Нужно обязательно продублировать некоторых юзеров в начале и конце для корректной работы, лучше всего по 20 штук с каждой стороны
-
-        // Это тестовая функция, её не надо использовать
-        stdf2_roullete.createBranches(20, true, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-
-        // Это тестовая функция, её не надо использовать
-        stdf2_roullete.createBranches(20, true, stdf2_roullete.branchHTML({
-            image: "assets/img/player3.png",
-            color: "purple",
-        }));
-    };
-    await stdf2_game.stage("running", {
-        header: "И победителем становится...",
-        hash: "09s8g9bfdhgdfgbhf8gdsbfdf9gb9dfusgbsd9fugbdfuy",
-    });
-    stdf2_game.stage("showing-winner");
-}
 }
