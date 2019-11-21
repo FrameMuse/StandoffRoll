@@ -154,6 +154,4 @@ const volume = new class {
 };
 
 
-$(".topbar__volume").click(() => {
-    volume.switch();
-});
+$(".topbar__volume").click(() => volume.switch());

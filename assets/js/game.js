@@ -1,9 +1,5 @@
 // StandoffRoll Game
 
-class game {
-    // The game scripts
-}
-
 class game_progress {
 
     constructor(name = ".stdf2-game-progress", options = {}) {
@@ -161,6 +157,7 @@ class Timer_by_aspect {
                 this.ms_update(this.ms_count);
                 if ((this.ms_count < 1 && this.ms_promise) || !this.ms_promise) {
                     clearInterval(interval);
+                    this.ms_count = 9;
                     this.ms_update(0);
                     resolve();
                 }
@@ -174,11 +171,179 @@ class Timer_by_aspect {
     }
 };
 
-const game_timer = new Timer_by_aspect("#timer32");
-game_timer.setTimer({
+const stdf2_game_timer = new Timer_by_aspect("#timer32");
+stdf2_game_timer.setTimer({
     title: "Ends in:",
     startWith: 9,
     orientaion: "right",
     divider: ".",
 });
-game_timer.goDownTo(6, true); // Число до которого нужно дойти
+//game_timer.goDownTo(0, true); // Число до которого нужно дойти
+
+const stdf2_roullete = new spinner(".stdf2-game__body");
+
+const stdf2_game = new class {
+    async stage(stage = "idle", options = {}) {
+        var game_inner = $(".stdf2-game__inner");
+        switch (stage) {
+            case "idle":
+                var html = `<div class="stdf2-game__details">
+                        <div class="stdf2-game-aspect">
+                            <span class="stdf2-game-aspect__name">Game</span>
+                            <span class="stdf2-game-aspect__value">#07891</span>
+                        </div>
+                        <div class="stdf2-game-aspect">
+                            <span class="stdf2-game-aspect__name">Game bank</span>
+                            <span class="stdf2-game-aspect__value">8 960 $</span>
+                        </div>
+                        <div id="timer32"></div>
+                    </div>
+                    <div class="stdf2-game__details">
+                        <div class="stdf2-game-progress"></div>
+                        <button class="stdf2-game__deposit">Bet your skins</button>
+                    </div>
+                    <div class="stdf2-game__details stdf2-game__details--centred">
+                        <div class="stdf2-game-aspect">
+                            <span class="stdf2-game-aspect__name gray">You betted</span>
+                            <span class="stdf2-game-aspect__value">3 skins</span>
+                        </div>
+                        <div class="stdf2-game-aspect">
+                            <span class="stdf2-game-aspect__name gray">Your chance</span>
+                            <span class="stdf2-game-aspect__value">3 %</span>
+                        </div>
+                    </div>`;
+                game_inner
+                    .attr("class", "stdf2-game__inner stdf2-game--is-" + stage)
+                    .empty()
+                    .append(html);
+                
+                stdf2_game_progress.build();
+                stdf2_game_progress.progress = 10;
+                stdf2_game_progress.max = 12;
+                stdf2_game_timer.setTimer({
+                    title: "Ends in:",
+                    startWith: 9,
+                    orientaion: "right",
+                    divider: ".",
+                });
+                break;
+            
+            case "showing-winner":
+                var html = ``;
+                game_inner
+                    .attr("class", "stdf2-game__inner stdf2-game--is-" + stage)
+                    .empty()
+                    .append(html);
+                break;
+            
+            case "running":
+                
+                var html = `<div class="stdf2-game__header">` + options.header + `</div>
+                    <div class="stdf2-game__body"></div>
+                    <span class="gray"><a href="#ozu">Честная игра</a> / Хэш игры: ` + options.hash + `</span>`;
+                
+                game_inner
+                    .attr("class", "stdf2-game__inner stdf2-game--is-" + stage)
+                    .empty()
+                    .append(html)
+                    .find(".stdf2-game__body")
+                    .replaceWith(stdf2_roullete.html);
+                this.onRunning();
+
+                stdf2_roullete.default();
+                return await stdf2_roullete.move_to_id(10);
+                break;
+
+            default:
+                return "It doesn't exist";
+                break;
+        }
+    }
+
+    async start() {
+    for (let index = 4; index >= 0; index--) {
+        stdf2_game_timer.goDownTo(index, true);
+        await timeout(1000);
+    }
+    stdf2_game.onRunning = () => {
+        // Нужно обязательно продублировать некоторых юзеров в начале и конце для корректной работы, лучше всего по 20 штук с каждой стороны
+
+        // Это тестовая функция, её не надо использовать
+        stdf2_roullete.createBranches(20, true, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+
+        // Это тестовая функция, её не надо использовать
+        stdf2_roullete.createBranches(20, true, stdf2_roullete.branchHTML({
+            image: "assets/img/player3.png",
+            color: "purple",
+        }));
+    };
+    await stdf2_game.stage("running", {
+        header: "И победителем становится...",
+        hash: "09s8g9bfdhgdfgbhf8gdsbfdf9gb9dfusgbsd9fugbdfuy",
+    });
+    stdf2_game.stage("showing-winner");
+}
+}

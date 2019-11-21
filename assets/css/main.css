@@ -737,6 +737,17 @@ main {
     border-top: unset;
 }
 
+.stdf2-game__inner {
+    /* display: inline-block; */
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.stdf2-game__header {
+    font-size: 1.5em;
+    text-align: center;
+}
 
 
 /* Contacts */
@@ -1568,15 +1579,13 @@ input.popup-window__button[type="text"] {
 /* Copyright */
 
 a.copyright__link {
-    margin-right: 50px;
-    font-size: 18px;
+    margin-right: 3.25em;
     font-weight: 500;
     color: #3f3f3f;
 }
 
 .copyright__text {
     display: flex;
-    font-size: 18px;
     font-weight: 500;
     color: #3f3f3f;
     flex: 1;
@@ -1756,6 +1765,88 @@ a.s-card {
 
 
 
+
+
+
+
+/* Roullete */
+
+.spinner-block {
+    display: inline-block;
+    width: 100%;
+    margin: 3em 0;
+}
+
+.spinner-line {
+    width: 100%;
+    padding: 2em;
+    background: rgba(255,255,255,0.01);
+    border-radius: 0.35em;
+    overflow: hidden;
+}
+
+.spinner-line__inner {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: inherit;
+}
+
+.spinner-line__branch {
+    display: flex;
+    background: #ab98bd;
+}
+
+.spinner-line__pointer-line {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 0.5px);
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    background: #47aa01;
+    /* border: 1px solid; */
+    border-top: unset;
+    border-bottom: unset;
+}
+
+.spinner-line__inner:before, .spinner-line__inner:after, .spinner-line__space {
+    padding: 0 225px;
+}
+
+
+
+
+
+
+.betted-player {
+    display: grid;
+}
+
+.betted-player__avatar {
+    width: 6em;
+    height: 6em;
+    object-fit: cover;
+}
+
+.betted-player__priceness-line {
+    position: absolute;
+    bottom: 0;
+    height: 0.15em;
+    width: 100%;
+    background: gray;
+}
+.betted-player__priceness-line--yellow {
+    background: #f5d000;
+}
+.betted-player__priceness-line--blue {
+    background: #00a1f5;
+}
+.betted-player__priceness-line--red {
+    background: #f50034;
+}
+.betted-player__priceness-line--purple {
+    background: #8635c5;
+}
 
 
 
