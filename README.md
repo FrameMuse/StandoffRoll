@@ -8,7 +8,7 @@ stdf2_roullete.createBranch(?fake, html);
 - Аргумент html задаёт разметку в бранче
 Чтобы было легче задавать разметку есть ещё одна функция
 ```javascript
-stdf2_roullete.branchHTML($img/argument1, $color);
+stdf2_roullete.branchHTML($img, $color);
 ```
 
 Примеры:
