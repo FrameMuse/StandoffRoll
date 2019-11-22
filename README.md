@@ -6,14 +6,14 @@
 Чтобы было легче задавать разметку есть ещё одна функция stdf2_roullete.branchHTML($img/argument1, $color);
 
 Примеры:
-----------------------
+```javascript
 stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
     image: "assets/img/player3.png",
     color: "purple",
 }));
 
 stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML("assets/img/player3.png", "purple"));
-----------------------
+```
 
 
 Можно создать блоки с помощью PHP с номерами, при этом нужно будет тогда изменить переменную счётчика в JS
