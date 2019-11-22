@@ -519,12 +519,16 @@
             });
 
             // Обновлять прогресс таким образом
-            stdf2_game_progress.progress = 10;
+            stdf2_game_progress.progress = 24;
             // Так же, если надо, можно поменять max
-            stdf2_game_progress.max = 9; // Ошибка т.к. max не может быть меньше прогресса
+            stdf2_game_progress.max = 100; // Ошибка т.к. max не может быть меньше прогресса
 
             // После всех остальных дел нужно применить изменения, в настройках есть возможно включить постоянное обновление
             //stdf2_game_progress.update();
+        </script>
+        <script>
+            stdf2_game_progress.max = 100;
+            stdf2_game_progress.progress = 25;
         </script>
         <script src="assets/js/popup.js"></script>
     </footer>

@@ -216,7 +216,7 @@ const stdf2_game = new class {
                     .attr("class", "stdf2-game__inner stdf2-game--is-" + stage)
                     .empty()
                     .append(html);
-                
+                // Reconstructing elements
                 stdf2_game_progress.build();
                 stdf2_game_progress.progress = 10;
                 stdf2_game_progress.max = 12;
@@ -229,7 +229,24 @@ const stdf2_game = new class {
                 break;
             
             case "showing-winner":
-                var html = ``;
+                var html = `<div class="stdf2-winner">
+                        <div class="stdf2-winner__header">` + options.nickname + `</div>
+                        <div class="stdf2-winner__game-info">
+                            <div class="stdf2-winner__detail">
+                                <img src="assets/img/icons/dice.png" alt="" class="stdf2-winner__image">
+                                <span>Chance: ` + options.chance + `%</span>
+                            </div>
+                            <img src="` + options.avatar + `" alt="player" class="stdf2-winner__avatar">
+                            <div class="stdf2-winner__detail">
+                                <img src="assets/img/icons/ticket.png" alt="" class="stdf2-winner__image">
+                                <span>Ticket #` + options.ticket + `</span>
+                            </div>
+                        </div>
+                        <div class="stdf2-winner__benefit">
+                            <span class="gray">Nickname has taken</span>
+                            <span class="stdf2-winner__benefit--number">` + options.benefit + ` $</span>
+                        </div>
+                    </div>`;
                 game_inner
                     .attr("class", "stdf2-game__inner stdf2-game--is-" + stage)
                     .empty()
@@ -344,6 +361,19 @@ const stdf2_game = new class {
             header: "И победителем становится...",
             hash: "09s8g9bfdhgdfgbhf8gdsbfdf9gb9dfusgbsd9fugbdfuy",
         });
-        stdf2_game.stage("showing-winner");
+        stdf2_game.stage("showing-winner", {
+            nickname: "FrameMuse",
+            avatar: "assets/img/player4.png",
+            // ---------------- \\
+            chance: 20,
+            ticket: 671,
+            benefit: 136782,
+        });
+        await timeout(5000);
+        stdf2_game.stage("idle");
     }
 }
+
+$(window).on("load", () => {
+    stdf2_game.start();
+});

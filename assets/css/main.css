@@ -738,14 +738,15 @@ main {
 }
 
 .stdf2-game__inner {
-    /* display: inline-block; */
-    justify-content: center;
     width: 100%;
-    text-align: center;
 }
 
 .stdf2-game__header {
     font-size: 1.5em;
+    text-align: center;
+}
+
+.stdf2-game--is-running {
     text-align: center;
 }
 
@@ -1817,6 +1818,7 @@ a.s-card {
 
 
 
+/* Betted player */
 
 .betted-player {
     display: grid;
@@ -1847,6 +1849,68 @@ a.s-card {
 .betted-player__priceness-line--purple {
     background: #8635c5;
 }
+
+
+/* Won player */
+
+.stdf2-winner {
+    display: grid;
+    padding: 2em;
+    background: rgba(255,255,255,0.01) url("../img/bg_winner.png") center;
+    background-size: 125%;
+    border-radius: 0.35em;
+}
+
+.stdf2-winner__header {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.stdf2-winner__game-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stdf2-winner__detail {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    width: 15em;
+}
+
+.stdf2-winner__image {
+    height: 2.75em;
+}
+
+.stdf2-winner__avatar {
+    width: 10em;
+    height: 10em;
+    margin: 2.5em 0;
+    border-radius: 100%;
+}
+
+.stdf2-winner__benefit {
+    text-align: center;
+}
+
+.stdf2-winner__benefit--number {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
