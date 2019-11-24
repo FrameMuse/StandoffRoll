@@ -249,25 +249,29 @@
                 </div>
                 <div class="stdf2-game__inner stdf2-game--is-showing-winner">
                     <div class="stdf2-winner">
-                        <div class="stdf2-winner__header"></div>
+                        <div class="stdf2-winner__header"><span class="js-game-winner-header"></span></div>
                         <div class="stdf2-winner__game-info">
                             <div class="stdf2-winner__detail">
                                 <img src="assets/img/icons/dice.png" alt="" class="stdf2-winner__image">
-                                <span>Chance: </span>
+                                <span>Chance: <span class="js-game-winner-chance"></span></span>
                             </div>
-                            <img src="` + options.avatar + `" alt="player" class="stdf2-winner__avatar">
+                            <img src="" alt="player" class="stdf2-winner__avatar js-game-winner-avatar">
                             <div class="stdf2-winner__detail">
                                 <img src="assets/img/icons/ticket.png" alt="" class="stdf2-winner__image">
-                                <span>Ticket #</span>
+                                <span>Ticket #<span class="js-game-winner-ticket"></span></span>
                             </div>
                         </div>
                         <div class="stdf2-winner__benefit">
                             <span class="gray">Nickname has taken</span>
-                            <span class="stdf2-winner__benefit--number"> $</span>
+                            <span class="stdf2-winner__benefit--number"><span class="js-game-winner-benefit"></span> $</span>
                         </div>
                     </div>
                 </div>
-                <div class="stdf2-game__inner stdf2-game--is-running"></div>
+                <div class="stdf2-game__inner stdf2-game--is-running">
+                    <div class="stdf2-game__header"></div>
+                    <div class="stdf2-game__body"></div>
+                    <span class="gray"><a href="#ozu">Честная игра</a> / Хэш игры: <span class="js-game-hash"></span></span>
+                </div>
                 <div class="stdf2-game-bets">
                     <div class="stdf2-game-bets__bet">
                         <div class="stdf2-game-bets__user">

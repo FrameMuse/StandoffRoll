@@ -181,7 +181,6 @@ stdf2_game_timer.setTimer({
 //game_timer.goDownTo(0, true); // Число до которого нужно дойти
 
 const stdf2_roullete = new spinner(".stdf2-game__body");
-
 const stdf2_game = new class {
     async stage(stage = "idle", options = {}) {
         var game_inner = ".stdf2-game__inner";
@@ -291,8 +290,20 @@ const stdf2_game = new class {
         stdf2_game.stage("idle");
     }
     
-    set jopa(settings) {
-        return settings;
+    edit() {
+        var unit = "",
+            data = {};
+        for (const property in arguments) {
+            var tag = arguments[property];
+            if (typeof tag == "string") unit = tag + '-';
+            if (typeof tag == "object") data = tag;
+        }
+        const $this = (option) => {
+            return $(`.js-game-${unit}` + option);
+        };
+        for (const property in data) {
+            $this(property).html(data[property]);
+        }
     }
 }
 

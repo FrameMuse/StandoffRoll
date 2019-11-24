@@ -49,7 +49,7 @@ class spinner {
         }
         this.calc();
         // Go to default position
-        this.move_to_id(0, 0);
+        this.move_to_id(Math.floor(this.branchCount / 2), 0);
         // Clear count
         this.branchCount = 0;
     }
