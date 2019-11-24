@@ -184,97 +184,15 @@ const stdf2_roullete = new spinner(".stdf2-game__body");
 
 const stdf2_game = new class {
     async stage(stage = "idle", options = {}) {
-        var game_inner = $(".stdf2-game__inner");
-        switch (stage) {
-            case "idle":
-                var html = `<div class="stdf2-game__details">
-                        <div class="stdf2-game-aspect">
-                            <span class="stdf2-game-aspect__name">Game</span>
-                            <span class="stdf2-game-aspect__value">#07891</span>
-                        </div>
-                        <div class="stdf2-game-aspect">
-                            <span class="stdf2-game-aspect__name">Game bank</span>
-                            <span class="stdf2-game-aspect__value">8 960 $</span>
-                        </div>
-                        <div id="timer32"></div>
-                    </div>
-                    <div class="stdf2-game__details">
-                        <div class="stdf2-game-progress"></div>
-                        <button class="stdf2-game__deposit">Bet your skins</button>
-                    </div>
-                    <div class="stdf2-game__details stdf2-game__details--centred">
-                        <div class="stdf2-game-aspect">
-                            <span class="stdf2-game-aspect__name gray">You betted</span>
-                            <span class="stdf2-game-aspect__value">3 skins</span>
-                        </div>
-                        <div class="stdf2-game-aspect">
-                            <span class="stdf2-game-aspect__name gray">Your chance</span>
-                            <span class="stdf2-game-aspect__value">3 %</span>
-                        </div>
-                    </div>`;
-                game_inner
-                    .attr("class", "stdf2-game__inner stdf2-game--is-" + stage)
-                    .empty()
-                    .append(html);
-                // Reconstructing elements
-                stdf2_game_progress.build();
-                stdf2_game_progress.progress = 10;
-                stdf2_game_progress.max = 12;
-                stdf2_game_timer.setTimer({
-                    title: "Ends in:",
-                    startWith: 9,
-                    orientaion: "right",
-                    divider: ".",
-                });
-                break;
-            
-            case "showing-winner":
-                var html = `<div class="stdf2-winner">
-                        <div class="stdf2-winner__header">` + options.nickname + `</div>
-                        <div class="stdf2-winner__game-info">
-                            <div class="stdf2-winner__detail">
-                                <img src="assets/img/icons/dice.png" alt="" class="stdf2-winner__image">
-                                <span>Chance: ` + options.chance + `%</span>
-                            </div>
-                            <img src="` + options.avatar + `" alt="player" class="stdf2-winner__avatar">
-                            <div class="stdf2-winner__detail">
-                                <img src="assets/img/icons/ticket.png" alt="" class="stdf2-winner__image">
-                                <span>Ticket #` + options.ticket + `</span>
-                            </div>
-                        </div>
-                        <div class="stdf2-winner__benefit">
-                            <span class="gray">Nickname has taken</span>
-                            <span class="stdf2-winner__benefit--number">` + options.benefit + ` $</span>
-                        </div>
-                    </div>`;
-                game_inner
-                    .attr("class", "stdf2-game__inner stdf2-game--is-" + stage)
-                    .empty()
-                    .append(html);
-                break;
-            
-            case "running":
-                
-                var html = `<div class="stdf2-game__header">` + options.header + `</div>
-                    <div class="stdf2-game__body"></div>
-                    <span class="gray"><a href="#ozu">Честная игра</a> / Хэш игры: ` + options.hash + `</span>`;
-                
-                game_inner
-                    .attr("class", "stdf2-game__inner stdf2-game--is-" + stage)
-                    .empty()
-                    .append(html)
-                    .find(".stdf2-game__body")
-                    .replaceWith(stdf2_roullete.html);
-                this.onRunning();
+        var game_inner = ".stdf2-game__inner";
+        var game_is = ".stdf2-game--is-";
 
-                stdf2_roullete.default();
-                return await stdf2_roullete.move_to_id(10);
-                break;
+        $(game_inner).attr("hidden", "");
+        $(game_is + stage).removeAttr("hidden");
+        this.onRunning();
+        stdf2_roullete.default();
 
-            default:
-                return "It doesn't exist";
-                break;
-        }
+        return await stdf2_roullete.move_to_id(10);
     }
 
     async start() {
@@ -372,8 +290,10 @@ const stdf2_game = new class {
         await timeout(5000);
         stdf2_game.stage("idle");
     }
+    
+    set jopa(settings) {
+        return settings;
+    }
 }
 
-$(window).on("load", () => {
-    stdf2_game.start();
-});
+$(window).on("load", () => stdf2_game.start());
