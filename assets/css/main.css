@@ -737,6 +737,13 @@ main {
     border-top: unset;
 }
 
+.stdf2-game-safety--ended {
+    background-image: linear-gradient(hsla(60, 99%, 34%, 0.04) 0%, hsla(55, 83%, 49%, 0.04) 100%);
+}
+.stdf2-game-safety--ended .stdf2-game-safety__border {
+    border-image: linear-gradient(transparent 15%, hsla(55, 83%, 49%, 1) 100%) 1;
+}
+
 .stdf2-game__inner {
     width: 100%;
 }
@@ -1812,6 +1819,24 @@ a.s-card {
 
 .spinner-line__inner:before, .spinner-line__inner:after, .spinner-line__space {
     padding: 0 225px;
+}
+
+.spinner-line:before, .spinner-line:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2em;
+    bottom: 2em;
+    width: 15em;
+    z-index: 6;
+}
+.spinner-line:before {
+    left: 2em;
+    background: linear-gradient(-90deg, transparent, #131313 100%);
+}
+.spinner-line:after {
+    right: 2em;
+    background: linear-gradient(90deg, transparent, #131313 100%);
 }
 
 

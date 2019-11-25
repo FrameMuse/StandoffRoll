@@ -182,16 +182,17 @@ stdf2_game_timer.setTimer({
 
 const stdf2_roullete = new spinner(".stdf2-game__body");
 const stdf2_game = new class {
-    async stage(stage = "idle", options = {}) {
+    constructor() {
+        this.safety("ended");
+    }
+    async __show(stage, $function = false) {
         var game_inner = ".stdf2-game__inner";
         var game_is = ".stdf2-game--is-";
 
         $(game_inner).attr("hidden", "");
         $(game_is + stage).removeAttr("hidden");
-        this.onRunning();
-        stdf2_roullete.default();
 
-        return await stdf2_roullete.move_to_id(10);
+        if ($function) return await $function();
     }
 
     async start() {
@@ -199,7 +200,8 @@ const stdf2_game = new class {
             stdf2_game_timer.goDownTo(index, true);
             await timeout(1000);
         }
-        stdf2_game.onRunning = () => {
+
+        this.onRunning = () => {
             // Нужно обязательно продублировать некоторых юзеров в начале и конце для корректной работы, лучше всего по 20 штук с каждой стороны
 
             // Это тестовая функция, её не надо использовать
@@ -208,62 +210,7 @@ const stdf2_game = new class {
                 color: "purple",
             }));
 
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
-                image: "assets/img/player3.png",
-                color: "purple",
-            }));
-
-            stdf2_roullete.createBranch(false, stdf2_roullete.branchHTML({
+            stdf2_roullete.createBranches(60, false, stdf2_roullete.branchHTML({
                 image: "assets/img/player3.png",
                 color: "purple",
             }));
@@ -274,20 +221,42 @@ const stdf2_game = new class {
                 color: "purple",
             }));
         };
-        await stdf2_game.stage("running", {
-            header: "И победителем становится...",
-            hash: "09s8g9bfdhgdfgbhf8gdsbfdf9gb9dfusgbsd9fugbdfuy",
+        // Start a roullete
+        this.edit({
+            hash: "asdasdd2d12ojd12897dhyn1289d",
         });
-        stdf2_game.stage("showing-winner", {
+        this.safety("started");
+        await this.__show("running", async () => {
+            this.onRunning();
+            stdf2_roullete.default();
+            return await stdf2_roullete.move_to_id(59);
+        });
+        // Change safety block
+        this.safety("ended");
+        // Show a winner
+        this.edit("winner", {
             nickname: "FrameMuse",
             avatar: "assets/img/player4.png",
-            // ---------------- \\
             chance: 20,
             ticket: 671,
             benefit: 136782,
         });
+        this.__show("showing-winner");
+        // Go back to an idle mode after 5s biding
         await timeout(5000);
-        stdf2_game.stage("idle");
+        this.__show("idle");
+    }
+
+    safety(tap) {
+        var taps = {
+            started: "Игра началась! Вносите предметы!",
+            ended: "Игра закончилась!",
+        };
+        $(".stdf2-game-safety")
+            .attr("class", "stdf2-game-safety")
+            .addClass("stdf2-game-safety--" + tap)
+            .find(".stdf2-game-safety__title")
+            .html(taps[tap]);
     }
     
     edit() {
@@ -298,11 +267,12 @@ const stdf2_game = new class {
             if (typeof tag == "string") unit = tag + '-';
             if (typeof tag == "object") data = tag;
         }
-        const $this = (option) => {
-            return $(`.js-game-${unit}` + option);
-        };
+        const $this = (option) => $(`.js-game-${unit}` + option);
         for (const property in data) {
-            $this(property).html(data[property]);
+            if ($this(property).is("img"))
+                $this(property).attr("src", data[property]);
+            else
+                $this(property).html(data[property]);
         }
     }
 }

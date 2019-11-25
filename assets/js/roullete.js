@@ -49,7 +49,7 @@ class spinner {
         }
         this.calc();
         // Go to default position
-        this.move_to_id(Math.floor(this.branchCount / 2), 0);
+        this.move_to_id(0, 0);
         // Clear count
         this.branchCount = 0;
     }
@@ -78,7 +78,7 @@ class spinner {
         return Math.floor((Math.random() * max) + 1);
     }
 
-    async move_to_id(id, duration = 12000) {
+    async move_to_id(id, duration = 7000) {
         var branch = $(".spinner-line__branch[data-branch-id=" + id + "]");
         var random = this.rand(this.indent_step);
         if (random > this.indent_step / 2) {
@@ -87,7 +87,7 @@ class spinner {
         var gotThere = new Promise((resolve) => {
             $(".spinner-line__inner").scrollTo(branch, duration, {
                 offset: -(random + (this.spinnerWidth / 2) - (this.branchWidth / 2)),
-                easing: $.bez([.3, .75, .27, 1]),
+                easing: $.bez([.2, 0, .4, .99]),
                 onAfter: () => resolve(),
             });
         });
