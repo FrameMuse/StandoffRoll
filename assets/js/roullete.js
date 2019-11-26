@@ -87,7 +87,7 @@ class spinner {
         var gotThere = new Promise((resolve) => {
             $(".spinner-line__inner").scrollTo(branch, duration, {
                 offset: -(random + (this.spinnerWidth / 2) - (this.branchWidth / 2)),
-                easing: $.bez([.2, 0, .4, .99]),
+                easing: $.bez([0, 0, 0, 0.975]),
                 onAfter: () => resolve(),
             });
         });
