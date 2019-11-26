@@ -1,0 +1,123 @@
+.menu, .topbar__volume, .dropdown-menu, .topbar-profile__info, .topbar-profile__deposit, .sidebar {
+    display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+    .market-services, .market-filters {
+        display: grid;
+    }
+    .market-services__section, a.copyright__link {
+        margin: 0;
+    }
+
+    .market-services {
+        grid-gap: 2em 0;
+    }
+
+    .market-filters {
+        grid-gap: 2em 0;
+        justify-content: center;
+    }
+    
+
+    .stdf2-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 3vw;
+    }
+}
+
+.topbar {
+    justify-content: unset;
+    padding: 1em 2em;
+}
+
+.topbar__logo {
+    top: 0.5em;
+    width: 10em;
+}
+
+.topbar__logo--mobile {
+    margin-bottom: 2em;
+}
+
+.topbar-profile {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    padding: 0;
+    background: unset;
+}
+
+.topbar-profile__avatar {
+    width: 4em;
+    height: 4em;
+    border-radius: 1.5vw;
+}
+
+.sidebar__part {
+    margin-bottom: 1.5em;
+    background: rgba(0, 0, 0, 0.25);
+}
+.sidebar__unit:hover, .sidebar__unit--selected {
+    background: #202020;
+}
+
+.to-top {
+    position: fixed;
+    right: 2em;
+    bottom: 2em;
+    padding: 1.35em 1.25em;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 100%;
+}
+
+.stdf2-page {
+    margin: 0;
+    padding: 2.5em;
+    width: 100%;
+}
+
+.market-filters {
+    padding: 2em 0;
+}
+
+.user-skins {
+    justify-content: flex-start;
+}
+
+/* Main styles */
+
+.mobile-menu {
+    margin-left: 0vw;
+}
+
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    padding: 2em 2em 0;
+    background: #252525;
+    box-shadow: 0 0 10px -6px black;
+    z-index: 9;
+    overflow-y: scroll;
+}
+
+.mobile-sidebar--hide {
+    animation: .3s ease mobile-sidebar-hide;
+    transform: translateX(-100%);
+}
+
+.mobile-sidebar--show {
+    animation: .3s ease mobile-sidebar-show;
+    transform: translateX(0%);
+}

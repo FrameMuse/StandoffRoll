@@ -3,8 +3,9 @@
 <head>
     <title>StandoffRoll</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1"">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css?">
+    <link rel="stylesheet" type="text/css" href="assets/css/animations.css?">
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700&amp;display=swap" rel="stylesheet">
     <!--OTHER-->
@@ -43,6 +44,10 @@
                     </div>
                 </div>
                 <div class="topbar-profile__deposit button1">Deposit</div>
+            </div>
+            <div class="mobile-menu">
+                <span class="mobile-menu__trigger built-icon__mobile-menu"></span>
+                <div class="mobile-menu__main"></div>
             </div>
         </div>
     </header>
@@ -389,6 +394,7 @@
     <footer>
         <!--Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
         <script src="assets/js/game.js"></script>
         <script>
             const stdf2_game_progress = new game_progress(".stdf2-game-progress", {
@@ -412,7 +418,7 @@
             // После всех остальных дел нужно применить изменения, в настройках есть возможно включить постоянное обновление
             //stdf2_game_progress.update();
         </script>
-        <script src="assets/js/scripts.js"></script>
+        <script src="assets/js/scripts.js?"></script>
         <script src="assets/js/market.js"></script>
     </footer>
 </body>
