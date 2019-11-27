@@ -11,6 +11,8 @@
     }
 }
 
+/* Mobile Sidebar */
+
 @keyframes mobile-sidebar-hide {
     0% {
         transform: translateX(0%);
@@ -30,6 +32,29 @@
         transform: translateX(0%);
     }
 }
+
+/* Mobile Menu */
+
+@keyframes mobile-menu-hide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes mobile-menu-show {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 
 
 /* Language menu */

@@ -1,5 +1,5 @@
-.menu, .topbar__volume, .dropdown-menu, .topbar-profile__info, .topbar-profile__deposit, .sidebar {
-    display: none !important;
+.topbar-profile__info {
+    display: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -36,6 +36,7 @@
 .topbar {
     justify-content: unset;
     padding: 1em 2em;
+    background: #131313;
 }
 
 .topbar__logo {
@@ -85,8 +86,8 @@
     width: 100%;
 }
 
-.market-filters {
-    padding: 2em 0;
+.market-sorting {
+    order: 1;
 }
 
 .user-skins {
@@ -112,12 +113,73 @@
     overflow-y: scroll;
 }
 
+/* Mobile Sidebar */
+
 .mobile-sidebar--hide {
     animation: .3s ease mobile-sidebar-hide;
     transform: translateX(-100%);
 }
-
 .mobile-sidebar--show {
     animation: .3s ease mobile-sidebar-show;
     transform: translateX(0%);
+}
+
+/* Mobile Sidebar */
+
+.mobile-menu__main--hide {
+    animation: .3s ease mobile-menu-hide;
+    transform: translateX(100%);
+}
+.mobile-menu__main--show {
+    animation: .3s ease mobile-menu-show;
+    transform: translateX(0%);
+}
+
+.topbar__tools--mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0.75em;
+    margin-bottom: 1em;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10em;
+}
+
+.topbar__tools--mobile .topbar__volume {
+    margin: 0;
+}
+
+.topbar__tools--mobile .dropdown-menu {
+    border-radius: 10em;
+}
+
+.mobile-menu__main {
+    display: grid;
+    align-content: baseline;
+    position: fixed;
+    top: 6em;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    /* padding: 2em 2em 0; */
+    background: #252525;
+    box-shadow: 0 0 10px -6px black;
+    z-index: 9;
+    overflow-y: scroll;
+}
+
+.mobile-menu__main .menu__item {
+    padding: 2em 1.5em;
+    margin: 0;
+    border-top: unset;
+    border-left: 0.3rem solid transparent;
+}
+
+.mobile-menu__main .menu__item:before {
+    top: 0;
+    background-image: linear-gradient(to right, #47aa01 -100%, transparent 40%);
+}
+
+.topbar-profile__deposit--mobile {
+    justify-self: baseline;
+    margin: 1em auto;
 }

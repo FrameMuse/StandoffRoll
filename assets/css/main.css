@@ -18,9 +18,11 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
     background: rgba(255,255,255,0.01);
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    z-index: 8;
+    z-index: 64;
 }
 
 .hidden {
@@ -220,7 +222,7 @@ button, input[type="submit"] {
     border-bottom: 0.3rem solid transparent;
 }
 .menu__item:hover, .menu__item--selected, .menu--bottom .menu__item--selected {
-    border-color: #47aa01;
+    border-color: #47aa01 !important;
 }
 .menu__item:last-child {
     margin: 0;
