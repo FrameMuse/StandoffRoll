@@ -9,21 +9,25 @@
     .market-services__section, a.copyright__link {
         margin: 0;
     }
-
     .market-services {
         grid-gap: 2em 0;
     }
-
     .market-filters {
         grid-gap: 2em 0;
         justify-content: center;
     }
-    
-
     .stdf2-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 2em;
+    }
+    .copyright--mobile {
+        display: grid;
+        grid-gap: 0.5em;
+    }
+    .copyright--mobile .copyright__text {
+        display: unset;
+        margin-top: 2em;
     }
 }
 
@@ -66,6 +70,7 @@
     margin-bottom: 1.5em;
     background: rgba(0, 0, 0, 0.25);
 }
+
 .sidebar__unit:hover, .sidebar__unit--selected {
     background: #202020;
 }
@@ -119,6 +124,7 @@
     animation: .3s ease mobile-sidebar-hide;
     transform: translateX(-100%);
 }
+
 .mobile-sidebar--show {
     animation: .3s ease mobile-sidebar-show;
     transform: translateX(0%);
@@ -130,6 +136,7 @@
     animation: .3s ease mobile-menu-hide;
     transform: translateX(100%);
 }
+
 .mobile-menu__main--show {
     animation: .3s ease mobile-menu-show;
     transform: translateX(0%);
@@ -182,4 +189,8 @@
 .topbar-profile__deposit--mobile {
     justify-self: baseline;
     margin: 1em auto;
+}
+
+.social-links--mobile {
+    margin: 2em 0 3em;
 }
