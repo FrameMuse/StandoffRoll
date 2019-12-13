@@ -2,66 +2,6 @@
     display: none;
 }
 
-@media screen and (max-width: 600px) {
-    .market-services, .market-filters {
-        display: grid;
-    }
-    .market-services__section, a.copyright__link {
-        margin: 0;
-    }
-    .market-services {
-        grid-gap: 2em 0;
-    }
-    .market-filters {
-        grid-gap: 2em 0;
-        justify-content: center;
-    }
-    .stdf2-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 2em;
-    }
-    .copyright--mobile {
-        display: grid;
-        grid-gap: 0.5em;
-    }
-    .copyright--mobile .copyright__text {
-        display: unset;
-        margin-top: 2em;
-    }
-    .stdf2-game-aspect--right, .stdf2-game__details--centred {
-        margin-right: 0;
-    }
-    .stdf2-game__details--grid {
-        display: grid;
-        justify-content: stretch;
-    }
-    .stdf2-game__details--grid .stdf2-game__deposit {
-        width: auto;
-        margin: 0 3em;
-        margin-top: 1.5em;
-    }
-    .stdf2-game-bets__text--mobile {
-        display: grid;
-    }
-    .stdf2-game-bets__text--mobile .stdf2-game-bets__text--right {
-        display: block;
-        margin: 1em 0;
-    }
-    .paysys {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-gap: 4em;
-        justify-items: center;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    body {
-        font-size: 3vw;
-    }
-}
-
 .topbar {
     justify-content: unset;
     padding: 1em 2em;
@@ -129,7 +69,39 @@
 }
 
 .stdf2-game-bets__user {
+    justify-content: center;
     font-size: 0.9em;
+}
+
+.stdf2-game-joiners__cover {
+    display: none;
+}
+
+.stdf2-game-joiners {
+    overflow: auto;
+}
+
+.stdf2-winner__detail {
+    width: auto;
+}
+
+.stdf2-winner__avatar {
+    width: 8em;
+    height: 8em;
+    margin: 2.5em
+}
+
+.table-user__image {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+.table {
+    font-size: 0.75em;
+}
+
+.contacts__data {
+    width: auto;
 }
 
 /* Main styles */
@@ -226,4 +198,72 @@
 
 .social-links--mobile {
     margin: 2em 0;
+}
+
+@media screen and (max-width: 600px) {
+    .market-services, .market-filters {
+        display: grid;
+    }
+    .market-services__section, a.copyright__link, .stdf2-game-bets__skins {
+        margin: 0;
+    }
+    .market-services {
+        grid-gap: 2em 0;
+    }
+    .market-filters {
+        grid-gap: 2em 0;
+        justify-content: center;
+    }
+    .stdf2-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5vw 0;
+    }
+    .copyright--mobile {
+        display: grid;
+        grid-gap: 0.5em;
+    }
+    .copyright--mobile .copyright__text {
+        display: unset;
+        margin-top: 2em;
+    }
+    .stdf2-game-aspect--right, .stdf2-game__details--centred {
+        margin-right: 0;
+    }
+    .stdf2-game__details--grid {
+        display: grid;
+        justify-content: stretch;
+    }
+    .stdf2-game__details--grid .stdf2-game__deposit {
+        width: auto;
+        margin: 0 3em;
+        margin-top: 1.5em;
+    }
+    .stdf2-game-bets__text--mobile {
+        display: grid;
+        margin-bottom: 1em;
+    }
+    .stdf2-game-bets__text--mobile .stdf2-game-bets__text--right {
+        display: none;
+        margin: 1em 0;
+    }
+    .paysys {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 5vw 0;
+        justify-items: center;
+    }
+    .stdf2-game-bets__bet {
+        display: grid;
+        grid-gap: 0.25em;
+    }
+    .table {
+        font-size: 0.65em;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 3vw;
+    }
 }

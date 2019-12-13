@@ -3,36 +3,91 @@
 <head>
     <title>StandoffRoll</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css?3">
+    <link rel="stylesheet" type="text/css" href="assets/css/animations.css">
+    <!link rel="stylesheet" type="text/css" href="assets/css/adaptive.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css?5">
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700&amp;display=swap" rel="stylesheet">
     <!--OTHER-->
 
 </head>
 <body>
-    <header>
-        <div class="topbar">
-            <div class="topbar__tools">
-                <img src="assets/img/logo.png" class="topbar__logo">
-                <div class="topbar__volume">
-                    <span class="built-icon__volume"></span>
-                </div>
-                <div class="dropdown-menu button">
-                    <div class="dropdown-menu__current">English</div>
-                    <div class="dropdown-menu__menu">
-                        <div class="dropdown-menu__unit">English</div>
-                        <div class="dropdown-menu__unit">Russian</div>
-                    </div>
+    <div class="mobile-sidebar mobile-sidebar--show">
+        <img src="assets/img/logo.png" class="topbar__logo topbar__logo--mobile">
+        <div class="topbar__tools topbar__tools--mobile">
+            <div class="dropdown-menu button">
+                <div class="dropdown-menu__current">English</div>
+                <div class="dropdown-menu__menu">
+                    <div class="dropdown-menu__unit button">English</div>
+                    <div class="dropdown-menu__unit button">Russian</div>
                 </div>
             </div>
-            <nav class="topbar-menu">
-                <a href="#" class="topbar-menu__item topbar-menu__item--selected"><span class="built-icon__house"></span>Home</a>
-                <a href="#" class="topbar-menu__item"><span class="built-icon__bag"></span>Shop</a>
-                <a href="#" class="topbar-menu__item"><span class="built-icon__time-line"></span>Timeline</a>
-                <a href="#" class="topbar-menu__item"><span class="built-icon__chart"></span>Top</a>
-                <a href="#" class="topbar-menu__item"><span class="built-icon__bookmark"></span>FAQ</a>
+            <div class="topbar__volume">
+                <span class="built-icon__volume"></span>
+                <span class="built-icon__volume--stick-across"></span>
+            </div>
+        </div>
+        <div class="sidebar__part">
+            <div class="sidebar__title">Playing rooms</div>
+            <nav class="sidebar__menu">
+                <div class="sidebar__unit sidebar__unit--selected">
+                    <span class="sidebar__unit--name">Default</span>
+                    <span class="sidebar__unit--desc">Min. bet 10</span>
+                </div>
+                <div class="sidebar__unit">
+                    <span class="sidebar__unit--name">Low mode</span>
+                    <span class="sidebar__unit--desc">Max. bet 10</span>
+                </div>
+                <div class="sidebar__unit">
+                    <span class="sidebar__unit--name">High mode</span>
+                    <span class="sidebar__unit--desc">Min. bet 1000</span>
+                </div>
             </nav>
+        </div>
+        <div class="sidebar__part">
+            <div class="sidebar__title">Last play</div>
+            <div class="sidebar-facts">
+                <div class="sidebar-facts__user">
+                    <img src="assets/img/player.png" class="sidebar-facts__user-image">
+                    <span class="sidebar-facts__username">Interesting</span>
+                </div>
+                <div class="sidebar-facts__stats">
+                    <section>
+                        <span class="gray">Benefit</span>
+                        <span class="green">8961 $</span>
+                    </section>
+                    <section>
+                        <span class="gray">Chance</span>
+                        <span class="green">1%</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar__part">
+            <div class="sidebar__title">Today's lucky man</div>
+            <div class="sidebar-facts">
+                <div class="sidebar-facts__user">
+                    <img src="assets/img/player.png" class="sidebar-facts__user-image">
+                    <span class="sidebar-facts__username">Interesting</span>
+                </div>
+                <div class="sidebar-facts__stats">
+                    <section>
+                        <span class="gray">Benefit</span>
+                        <span class="green">8961 $</span>
+                    </section>
+                    <section>
+                        <span class="gray">Chance</span>
+                        <span class="green">1%</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="topbar">
+            <img src="assets/img/logo.png" class="topbar__logo">
             <div class="topbar-profile">
                 <img src="assets/img/avatar.png" class="topbar-profile__avatar">
                 <div class="topbar-profile__info">
@@ -42,68 +97,22 @@
                         <span>1.0 P</span>
                     </div>
                 </div>
-                <div class="topbar-profile__deposit button1">Deposit</div>
+            </div>
+            <div class="mobile-menu">
+                <span class="mobile-menu__trigger built-icon__mobile-menu"></span>
+                <nav class="mobile-menu__main mobile-menu__main--show">
+                    <div class="topbar-profile__deposit topbar-profile__deposit--mobile button1" onclick="popup('top_up')">
+                        Deposit</div>
+                    <a href="#" class="menu__item menu__item--selected"><span class="built-icon__house"></span>Home</a>
+                    <a href="#" class="menu__item"><span class="built-icon__bag"></span>Shop</a>
+                    <a href="#" class="menu__item"><span class="built-icon__time-line"></span>Timeline</a>
+                    <a href="#" class="menu__item"><span class="built-icon__chart"></span>Top</a>
+                    <a href="#" class="menu__item"><span class="built-icon__bookmark"></span>FAQ</a>
+                </nav>
             </div>
         </div>
     </header>
     <main>
-        <div class="sidebar">
-            <div class="sidebar__part">
-                <div class="sidebar__title">Playing rooms</div>
-                <nav class="sidebar__menu">
-                    <div class="sidebar__unit sidebar__unit--selected">
-                        <span class="sidebar__unit--name">Default</span>
-                        <span class="sidebar__unit--desc">Min. bet 10</span>
-                    </div>
-                    <div class="sidebar__unit">
-                        <span class="sidebar__unit--name">Low mode</span>
-                        <span class="sidebar__unit--desc">Max. bet 10</span>
-                    </div>
-                    <div class="sidebar__unit">
-                        <span class="sidebar__unit--name">High mode</span>
-                        <span class="sidebar__unit--desc">Min. bet 1000</span>
-                    </div>
-                </nav>
-            </div>
-            <div class="sidebar__part">
-                <div class="sidebar__title">Last play</div>
-                <div class="sidebar-facts">
-                    <div class="sidebar-facts__user">
-                        <img src="assets/img/player.png" class="sidebar-facts__user-image">
-                        <span class="sidebar-facts__username">Interesting</span>
-                    </div>
-                    <div class="sidebar-facts__stats">
-                        <section>
-                            <span class="gray">Benefit</span>
-                            <span class="green">8961 $</span>
-                        </section>
-                        <section>
-                            <span class="gray">Chance</span>
-                            <span class="green">1%</span>
-                        </section>
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar__part">
-                <div class="sidebar__title">Today's lucky man</div>
-                <div class="sidebar-facts">
-                    <div class="sidebar-facts__user">
-                        <img src="assets/img/player.png" class="sidebar-facts__user-image">
-                        <span class="sidebar-facts__username">Interesting</span>
-                    </div>
-                    <div class="sidebar-facts__stats">
-                        <section>
-                            <span class="gray">Benefit</span>
-                            <span class="green">8961 $</span>
-                        </section>
-                        <section>
-                            <span class="gray">Chance</span>
-                            <span class="green">1%</span>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="stdf2-page">
             <div class="stdf2-stats">
                 <div class="stdf2-stats__one">
@@ -146,12 +155,6 @@
                 <div class="footer__zalupa">
                     <div class="footer__ref">
                         <img src="assets/img/logo.png" class="footer__logo">
-                        <div class="social-links">
-                            <a href="#" class="social-links__link social-links__link--vk"></a>
-                            <a href="#" class="social-links__link social-links__link--instagram"></a>
-                            <a href="#" class="social-links__link social-links__link--steam"></a>
-                            <a href="#" class="social-links__link social-links__link--youtube"></a>
-                        </div>
                         <img src="assets/img/standoffcard.png" class="footer__logo">
                         <img src="assets/img/standoffcase.png" class="footer__logo">
                     </div>
@@ -159,14 +162,20 @@
                         <span class="built-icon__chevron-up"></span>
                     </div>
                 </div>
-                <!--div class="paysys">
+                <div class="social-links social-links--mobile">
+                    <a href="#" class="social-links__link social-links__link--vk"></a>
+                    <a href="#" class="social-links__link social-links__link--instagram"></a>
+                    <a href="#" class="social-links__link social-links__link--steam"></a>
+                    <a href="#" class="social-links__link social-links__link--youtube"></a>
+                </div>
+                <div class="paysys">
                     <img src="https://standoffcase.ru/assets/img/payments_systems/mastercard.svg" class="paysys__image">
                     <img src="https://standoffcase.ru/assets/img/payments_systems/webmoney.svg" class="paysys__image">
                     <img src="https://standoffcase.ru/assets/img/payments_systems/qiwi.svg" class="paysys__image">
                     <img src="https://standoffcase.ru/assets/img/payments_systems/yandex.svg" class="paysys__image">
                     <img src="https://standoffcase.ru/assets/img/payments_systems/visa.svg" class="paysys__image">
-                </div-->
-                <div class="copyright">
+                </div>
+                <div class="copyright copyright--mobile">
                     <a href="/" class="copyright__link">support@standoffroll.com</a>
                     <a href="/agreement" class="copyright__link">Terms of use</a>
                     <a href="/contacts" class="copyright__link">Contacts</a>
@@ -177,34 +186,15 @@
     </main>
     <footer>
         <!--Scripts-->
-        <script src="https://standoffcase.ru/assets/js/jquery-3.3.1.min.js"></script>
-        <script src="assets/js/game.js"></script>
-        <script>
-            const stdf2_game_progress = new game_progress(".stdf2-game-progress", {
-                max: 12,
-                autoUpdate: true, // Default: false
-                progress: {
-                  //mode: "percent", // По-умолчанию в процентах
-                    mode: "tillMax", // Прогресс до max, проценты считаються сами
-                    amount: 12, // Указывается либо от 0 до 100, либо от 0 до max
-                },
-                text: {
-                    separate: "from", // Суда можно поставить парсер языка 
-                },
-            });
-
-            // Обновлять прогресс таким образом
-            stdf2_game_progress.progress = 10;
-            // Так же, если надо, можно поменять max
-            stdf2_game_progress.max = 9; // Ошибка т.к. max не может быть меньше прогресса
-
-            // После всех остальных дел нужно применить изменения, в настройках есть возможно включить постоянное обновление
-            //stdf2_game_progress.update();
-        </script>
-        <script src="assets/js/scripts.js"></script>
-        <script>
-            
-        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
+        <script src="assets/js/jquery.bez.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/roullete.js"></script>
+        <script src="assets/js/game.js?2"></script>
+        <script src="assets/js/scripts.js?5"></script>
+        <script src="assets/js/market.js"></script>
+        <script src="assets/js/popup.js"></script>
     </footer>
 </body>
 </html>

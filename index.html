@@ -3,11 +3,11 @@
 <head>
     <title>StandoffRoll</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css?">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css?3">
     <link rel="stylesheet" type="text/css" href="assets/css/animations.css">
     <!link rel="stylesheet" type="text/css" href="assets/css/adaptive.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css?2">
+    <link rel="stylesheet" type="text/css" href="assets/css/mobile.css?5">
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700&amp;display=swap" rel="stylesheet">
     <!--OTHER-->
@@ -532,31 +532,29 @@
         <!--Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
-        <script src="assets/js/game.js"></script>
+        <script src="assets/js/jquery.bez.js"></script>
+        <script src="assets/js/jquery.scrollTo.min.js"></script>
+        <script src="assets/js/roullete.js"></script>
+        <script src="assets/js/game.js?2"></script>
         <script src="assets/js/scripts.js?5"></script>
         <script src="assets/js/market.js"></script>
         <script src="assets/js/popup.js"></script>
         <script>
             const stdf2_game_progress = new game_progress(".stdf2-game-progress", {
                 max: 12,
-                autoUpdate: true, // Default: false
+                autoUpdate: true,
                 progress: {
-                    //mode: "percent", // По-умолчанию в процентах
-                    mode: "tillMax", // Прогресс до max, проценты считаються сами
-                    amount: 12, // Указывается либо от 0 до 100, либо от 0 до max
+                    mode: "tillMax",
+                    amount: 12,
                 },
                 text: {
-                    separate: "from", // Суда можно поставить парсер языка 
+                    separate: "from",
                 },
             });
 
-            // Обновлять прогресс таким образом
-            stdf2_game_progress.progress = 10;
-            // Так же, если надо, можно поменять max
-            stdf2_game_progress.max = 12; // Ошибка т.к. max не может быть меньше прогресса
-
-                        // После всех остальных дел нужно применить изменения, в настройках есть возможно включить постоянное обновление
-                        //stdf2_game_progress.update();
+            stdf2_game_progress.max = 100;
+            stdf2_game_progress.progress = 100;
+            Joiners_work = false;
         </script>
     </footer>
 </body>

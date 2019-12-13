@@ -8,7 +8,6 @@ html {
 }
 
 body {
-    width: 100vw;
     margin: 0;
     background-color: #101010;
     font-family: "Exo 2", sans-serif;
@@ -607,7 +606,7 @@ main {
 
 .stdf2-game-bets__bet {
     display: flex;
-    margin-bottom: 1.25em;
+    margin-bottom: 2em;
 }
 
 .stdf2-game-bets__user {
@@ -901,7 +900,7 @@ main {
 
 .table td {
     flex: 1;
-    padding: 20px 35px;
+    padding: 1.5em 2.25em;
 }
 
 .table td:first-child {
@@ -923,6 +922,10 @@ main {
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+.table-user>span {
+    flex-shrink: 1;
 }
 
 .table-user__image {
@@ -1574,7 +1577,6 @@ input.popup-window__button[type="text"] {
 
 .paysys {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-content: stretch;
     align-items: stretch;
@@ -1582,7 +1584,7 @@ input.popup-window__button[type="text"] {
 }
 
 .paysys__image {
-    height: 2.5em;
+    height: 1.75em;
     filter: contrast(0.5) opacity(0.2) grayscale(1);
     cursor: pointer;
     transition: .125s linear filter;
@@ -1590,10 +1592,6 @@ input.popup-window__button[type="text"] {
 
 .paysys__image:hover {
     filter: contrast(1) opacity(1) grayscale(0);
-}
-
-.paysys__image:last-child {
-    height: 2em;
 }
 
 .undertop--topline {
@@ -1654,10 +1652,10 @@ a.copyright__link {
 
 .social-links__link {
     display: block;
-    padding: 10px;
+    padding: 0.75em;
     margin-right: 3em;
-    width: 18px;
-    height: 18px;
+    width: 1.25em;
+    height: 1.25em;
     background: no-repeat center;
     background-size: cover;
     filter: contrast(0.1) opacity(0.5);
@@ -1747,9 +1745,10 @@ a.s-card {
     width: 1px;
     height: 100%;
     background: #47aa01;
-    /* border: 1px solid; */
+    /* border: 1px solid #47aa01; */
     border-top: unset;
     border-bottom: unset;
+    z-index: 13;
 }
 
 .spinner-line__inner:before, .spinner-line__inner:after, .spinner-line__space {
