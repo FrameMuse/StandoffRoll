@@ -1577,12 +1577,11 @@ input.popup-window__button[type="text"] {
     justify-content: space-between;
     align-content: stretch;
     align-items: stretch;
-    padding: 0 5em;
-    margin-top: 2em;
+    margin: 2em 0;
 }
 
 .paysys__image {
-    height: 1.75em;
+    height: 2.5em;
     filter: contrast(0.5) opacity(0.2) grayscale(1);
     cursor: pointer;
     transition: .125s linear filter;
@@ -1590,6 +1589,10 @@ input.popup-window__button[type="text"] {
 
 .paysys__image:hover {
     filter: contrast(1) opacity(1) grayscale(0);
+}
+
+.paysys__image:last-child {
+    height: 2em;
 }
 
 .undertop--topline {

@@ -29,6 +29,35 @@
         display: unset;
         margin-top: 2em;
     }
+    .stdf2-game-aspect--right, .stdf2-game__details--centred {
+        margin-right: 0;
+    }
+
+    .stdf2-game__details--grid {
+        display: grid;
+        justify-content: stretch;
+    }
+
+    .stdf2-game__details--grid .stdf2-game__deposit {
+        width: auto;
+        margin: 0 3em;
+        margin-top: 1.5em;
+    }
+
+    .stdf2-game-bets__text--mobile {
+        display: grid;
+    }
+
+    .stdf2-game-bets__text--mobile .stdf2-game-bets__text--right {
+        display: block;
+        margin: 1em 0;
+    }
+    .paysys {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 4em;
+        justify-items: center;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -97,6 +126,14 @@
 
 .user-skins {
     justify-content: flex-start;
+}
+
+.stdf2-skins {
+    overflow: auto;
+}
+
+.stdf2-game-bets__user {
+    font-size: 0.9em;
 }
 
 /* Main styles */
@@ -192,5 +229,5 @@
 }
 
 .social-links--mobile {
-    margin: 2em 0 3em;
+    margin: 2em 0;
 }
