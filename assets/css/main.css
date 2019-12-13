@@ -1574,6 +1574,7 @@ input.popup-window__button[type="text"] {
 
 .paysys {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-content: stretch;
     align-items: stretch;
