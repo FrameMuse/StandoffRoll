@@ -14,28 +14,80 @@
 
 </head>
 <body>
-    <header>
-        <div class="topbar">
-            <div class="topbar__tools">
-                <img src="assets/img/logo.png" class="topbar__logo">
-                <div class="topbar__volume">
-                    <span class="built-icon__volume"></span>
-                </div>
-                <div class="dropdown-menu">
-                    <div class="dropdown-menu__current button">English</div>
-                    <div class="dropdown-menu__menu">
-                        <div class="dropdown-menu__unit">English</div>
-                        <div class="dropdown-menu__unit">Russian</div>
-                    </div>
+    <div class="mobile-sidebar mobile-sidebar--show">
+        <img src="assets/img/logo.png" class="topbar__logo topbar__logo--mobile">
+        <div class="topbar__tools topbar__tools--mobile">
+            <div class="dropdown-menu button">
+                <div class="dropdown-menu__current">English</div>
+                <div class="dropdown-menu__menu">
+                    <div class="dropdown-menu__unit button">English</div>
+                    <div class="dropdown-menu__unit button">Russian</div>
                 </div>
             </div>
-            <nav class="topbar-menu">
-                <a href="#" class="topbar-menu__item topbar-menu__item--selected"><span class="built-icon__house"></span>Home</a>
-                <a href="#" class="topbar-menu__item"><span class="built-icon__bag"></span>Shop</a>
-                <a href="#" class="topbar-menu__item"><span class="built-icon__time-line"></span>Timeline</a>
-                <a href="#" class="topbar-menu__item"><span class="built-icon__chart"></span>Top</a>
-                <a href="#" class="topbar-menu__item"><span class="built-icon__bookmark"></span>FAQ</a>
+            <div class="topbar__volume">
+                <span class="built-icon__volume"></span>
+                <span class="built-icon__volume--stick-across"></span>
+            </div>
+        </div>
+        <div class="sidebar__part">
+            <div class="sidebar__title">Playing rooms</div>
+            <nav class="sidebar__menu">
+                <div class="sidebar__unit sidebar__unit--selected">
+                    <span class="sidebar__unit--name">Default</span>
+                    <span class="sidebar__unit--desc">Min. bet 10</span>
+                </div>
+                <div class="sidebar__unit">
+                    <span class="sidebar__unit--name">Low mode</span>
+                    <span class="sidebar__unit--desc">Max. bet 10</span>
+                </div>
+                <div class="sidebar__unit">
+                    <span class="sidebar__unit--name">High mode</span>
+                    <span class="sidebar__unit--desc">Min. bet 1000</span>
+                </div>
             </nav>
+        </div>
+        <div class="sidebar__part">
+            <div class="sidebar__title">Last play</div>
+            <div class="sidebar-facts">
+                <div class="sidebar-facts__user">
+                    <img src="assets/img/player.png" class="sidebar-facts__user-image">
+                    <span class="sidebar-facts__username">Interesting</span>
+                </div>
+                <div class="sidebar-facts__stats">
+                    <section>
+                        <span class="gray">Benefit</span>
+                        <span class="green">8961 $</span>
+                    </section>
+                    <section>
+                        <span class="gray">Chance</span>
+                        <span class="green">1%</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar__part">
+            <div class="sidebar__title">Today's lucky man</div>
+            <div class="sidebar-facts">
+                <div class="sidebar-facts__user">
+                    <img src="assets/img/player.png" class="sidebar-facts__user-image">
+                    <span class="sidebar-facts__username">Interesting</span>
+                </div>
+                <div class="sidebar-facts__stats">
+                    <section>
+                        <span class="gray">Benefit</span>
+                        <span class="green">8961 $</span>
+                    </section>
+                    <section>
+                        <span class="gray">Chance</span>
+                        <span class="green">1%</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="topbar">
+            <img src="assets/img/logo.png" class="topbar__logo">
             <div class="topbar-profile">
                 <img src="assets/img/avatar.png" class="topbar-profile__avatar">
                 <div class="topbar-profile__info">
@@ -45,75 +97,22 @@
                         <span>1.0 P</span>
                     </div>
                 </div>
-                <div class="topbar-profile__deposit button1">Deposit</div>
             </div>
             <div class="mobile-menu">
-                <span class="built-icon__mobile-menu mobile-menu__trigger"></span>
-                <div class="mobile-menu__main"></div>
+                <span class="mobile-menu__trigger built-icon__mobile-menu"></span>
+                <nav class="mobile-menu__main mobile-menu__main--show">
+                    <div class="topbar-profile__deposit topbar-profile__deposit--mobile button1" onclick="popup('top_up')">
+                        Deposit</div>
+                    <a href="#" class="menu__item menu__item--selected"><span class="built-icon__house"></span>Home</a>
+                    <a href="#" class="menu__item"><span class="built-icon__bag"></span>Shop</a>
+                    <a href="#" class="menu__item"><span class="built-icon__time-line"></span>Timeline</a>
+                    <a href="#" class="menu__item"><span class="built-icon__chart"></span>Top</a>
+                    <a href="#" class="menu__item"><span class="built-icon__bookmark"></span>FAQ</a>
+                </nav>
             </div>
         </div>
     </header>
-    <mobile>
-        
-    </mobile>
     <main>
-        <div class="sidebar">
-            <div class="sidebar__part">
-                <div class="sidebar__title">Playing rooms</div>
-                <nav class="sidebar__menu">
-                    <div class="sidebar__unit sidebar__unit--selected">
-                        <span class="sidebar__unit--name">Default</span>
-                        <span class="sidebar__unit--desc">Min. bet 10</span>
-                    </div>
-                    <div class="sidebar__unit">
-                        <span class="sidebar__unit--name">Low mode</span>
-                        <span class="sidebar__unit--desc">Max. bet 10</span>
-                    </div>
-                    <div class="sidebar__unit">
-                        <span class="sidebar__unit--name">High mode</span>
-                        <span class="sidebar__unit--desc">Min. bet 1000</span>
-                    </div>
-                </nav>
-            </div>
-            <div class="sidebar__part">
-                <div class="sidebar__title">Last play</div>
-                <div class="sidebar-facts">
-                    <div class="sidebar-facts__user">
-                        <img src="assets/img/player.png" class="sidebar-facts__user-image">
-                        <span class="sidebar-facts__username">Interesting</span>
-                    </div>
-                    <div class="sidebar-facts__stats">
-                        <section>
-                            <span class="gray">Benefit</span>
-                            <span class="green">8961 $</span>
-                        </section>
-                        <section>
-                            <span class="gray">Chance</span>
-                            <span class="green">1%</span>
-                        </section>
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar__part">
-                <div class="sidebar__title">Today's lucky man</div>
-                <div class="sidebar-facts">
-                    <div class="sidebar-facts__user">
-                        <img src="assets/img/player.png" class="sidebar-facts__user-image">
-                        <span class="sidebar-facts__username">Interesting</span>
-                    </div>
-                    <div class="sidebar-facts__stats">
-                        <section>
-                            <span class="gray">Benefit</span>
-                            <span class="green">8961 $</span>
-                        </section>
-                        <section>
-                            <span class="gray">Chance</span>
-                            <span class="green">1%</span>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="stdf2-page">
             <div class="stdf2-stats">
                 <div class="stdf2-stats__one">
@@ -532,17 +531,14 @@
     <footer>
         <!--Scripts-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrollTo.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
-        <script src="assets/js/jquery.bez.js"></script>
-        <script src="assets/js/roullete.js"></script>
+        <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
         <script src="assets/js/game.js"></script>
         <script>
             const stdf2_game_progress = new game_progress(".stdf2-game-progress", {
                 max: 12,
                 autoUpdate: true, // Default: false
                 progress: {
-                  //mode: "percent", // По-умолчанию в процентах
+                    //mode: "percent", // По-умолчанию в процентах
                     mode: "tillMax", // Прогресс до max, проценты считаються сами
                     amount: 12, // Указывается либо от 0 до 100, либо от 0 до max
                 },
@@ -552,17 +548,15 @@
             });
 
             // Обновлять прогресс таким образом
-            stdf2_game_progress.progress = 24;
+            stdf2_game_progress.progress = 10;
             // Так же, если надо, можно поменять max
-            stdf2_game_progress.max = 100; // Ошибка т.к. max не может быть меньше прогресса
+            stdf2_game_progress.max = 9; // Ошибка т.к. max не может быть меньше прогресса
 
-            // После всех остальных дел нужно применить изменения, в настройках есть возможно включить постоянное обновление
-            //stdf2_game_progress.update();
+                // После всех остальных дел нужно применить изменения, в настройках есть возможно включить постоянное обновление
+                //stdf2_game_progress.update();
         </script>
-        <script>
-            stdf2_game_progress.max = 100;
-            stdf2_game_progress.progress = 25;
-        </script>
+        <script src="assets/js/scripts.js?5"></script>
+        <script src="assets/js/market.js"></script>
         <script src="assets/js/popup.js"></script>
     </footer>
 </body>
