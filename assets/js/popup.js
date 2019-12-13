@@ -291,6 +291,8 @@ function popup($window, options = {}) {
     // Animation
     $(".popup").removeAttr("hidden");
     setTimeout(() => $(".popup-window").removeClass("scale-out scale-in").addClass("scale-in"), 0);
+
+    if ($window == "top_up") Mmenu("hide");
 }
 
 $(".popup-window__close, .popup__cover").click(() => {

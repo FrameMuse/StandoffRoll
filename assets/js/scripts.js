@@ -106,6 +106,8 @@ function Msidebar(tap) {
 function Mmenu(tap) {
     $(".mobile-menu__main")
         .attr("class", "mobile-menu__main mobile-menu__main--" + tap);
+    console.log(123);
+    
 }
 
 $(window).on("load", () => {

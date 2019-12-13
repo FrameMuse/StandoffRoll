@@ -104,6 +104,34 @@
     width: auto;
 }
 
+.users-top__places {
+    display: grid;
+    grid-gap: 5em;
+    justify-content: stretch;
+}
+
+.users-top {
+    padding: 0 5vw;
+}
+
+.users-top__place {
+    margin: 0;
+}
+
+.user-profile-stats {
+    display: grid;
+    grid-gap: 1.5em;
+}
+
+.user-profile-stats__stat {
+    margin: 0;
+}
+
+.user-skins {
+    padding-bottom: 5em;
+    justify-content: center;
+}
+
 /* Main styles */
 
 .mobile-menu {
@@ -248,7 +276,7 @@
         margin: 1em 0;
     }
     .paysys {
-        display: grid;
+        display: flex;
         grid-template-columns: repeat(3, auto);
         grid-gap: 5vw 0;
         justify-items: center;
@@ -259,6 +287,9 @@
     }
     .table {
         font-size: 0.65em;
+    }
+    .popup-window {
+        width: 90%;
     }
 }
 
