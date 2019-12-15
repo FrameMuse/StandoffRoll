@@ -1,41 +1,63 @@
-.menu, .topbar__volume, .dropdown-menu, .topbar-profile__info, .topbar-profile__deposit, .sidebar {
-    display: none !important;
+main .sidebar, .topbar .menu, .topbar .topbar-profile, .topbar .topbar__tools .topbar__volume, .topbar .topbar__tools .dropdown-menu {
+    display: none;
 }
 
-@media screen and (max-width: 600px) {
-    .market-services, .market-filters {
-        display: grid;
-    }
-    .market-services__section, a.copyright__link {
-        margin: 0;
-    }
-
-    .market-services {
-        grid-gap: 2em 0;
-    }
-
-    .market-filters {
-        grid-gap: 2em 0;
-        justify-content: center;
-    }
-    
-
-    .stdf2-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 2em;
-    }
+.mobile__profile {
+    margin-top: 1.25em;
 }
 
-@media screen and (max-width: 400px) {
-    body {
-        font-size: 3vw;
-    }
+.auth__btn {
+    margin: 0 1.25em;
+    text-align: center;
+}
+
+.mobile__profile .topbar-profile__avatar {
+    display: flex;
+    margin: auto;
+    margin-bottom: 1.25em;
+}
+
+.mobile__topbar-profile__info {
+    display: grid;
+    grid-gap: 0.25em;
+    text-align: center;
+}
+
+.topbar-profile__balance {
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.user-profile-info {
+    flex-direction: column;
+}
+
+.user-profile-info__side {
+    justify-items: center;
+}
+
+.user-profile-info__avatar {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.topbar {
+    width: 100%;
+    position: fixed;
+}
+
+.mobile-menu {
+    display: unset;
+}
+
+.topbar-profile__info {
+    display: none;
 }
 
 .topbar {
     justify-content: unset;
     padding: 1em 2em;
+    background: #131313;
 }
 
 .topbar__logo {
@@ -65,6 +87,7 @@
     margin-bottom: 1.5em;
     background: rgba(0, 0, 0, 0.25);
 }
+
 .sidebar__unit:hover, .sidebar__unit--selected {
     background: #202020;
 }
@@ -85,18 +108,90 @@
     width: 100%;
 }
 
-.market-filters {
-    padding: 2em 0;
+.market-sorting {
+    order: 1;
 }
 
 .user-skins {
     justify-content: flex-start;
 }
 
+.stdf2-skins {
+    overflow: auto;
+}
+
+.stdf2-game-bets__user {
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+.stdf2-game-joiners__cover {
+    display: none;
+}
+
+.stdf2-game-joiners {
+    overflow: auto;
+}
+
+.stdf2-winner__detail {
+    width: auto;
+}
+
+.stdf2-winner__avatar {
+    width: 8em;
+    height: 8em;
+    margin: 2.5em
+}
+
+.table-user__image {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+.table {
+    font-size: 0.75em;
+}
+
+.table td {
+    padding: 1.5em 1.75em;
+}
+
+.contacts__data {
+    width: auto;
+}
+
+.users-top__places {
+    display: grid;
+    grid-gap: 5em;
+    justify-content: stretch;
+}
+
+.users-top {
+    padding: 0 5vw;
+}
+
+.users-top__place {
+    margin: 0;
+}
+
+.user-profile-stats {
+    display: grid;
+    grid-gap: 1.5em;
+}
+
+.user-profile-stats__stat {
+    margin: 0;
+}
+
+.user-skins {
+    padding-bottom: 5em;
+    justify-content: center;
+}
+
 /* Main styles */
 
 .mobile-menu {
-    margin-left: 0vw;
+    margin-left: auto;
 }
 
 .mobile-sidebar {
@@ -112,6 +207,8 @@
     overflow-y: scroll;
 }
 
+/* Mobile Sidebar */
+
 .mobile-sidebar--hide {
     animation: .3s ease mobile-sidebar-hide;
     transform: translateX(-100%);
@@ -120,4 +217,145 @@
 .mobile-sidebar--show {
     animation: .3s ease mobile-sidebar-show;
     transform: translateX(0%);
+}
+
+/* Mobile Sidebar */
+
+.mobile-menu__main--hide {
+    animation: .3s ease mobile-menu-hide;
+    transform: translateX(100%);
+}
+
+.mobile-menu__main--show {
+    animation: .3s ease mobile-menu-show;
+    transform: translateX(0%);
+}
+
+.topbar__tools--mobile {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0.75em;
+    margin-bottom: 1em;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10em;
+}
+
+.topbar__tools--mobile .topbar__volume {
+    margin: 0;
+}
+
+.topbar__tools--mobile .dropdown-menu {
+    border-radius: 10em;
+}
+
+.mobile-menu__main {
+    display: grid;
+    align-content: baseline;
+    position: fixed;
+    top: 4.9em;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background: #252525;
+    box-shadow: 0 0 10px -6px black;
+    z-index: 9;
+    overflow-y: scroll;
+}
+
+.mobile-menu__main .menu__item {
+    padding: 2em 1.5em;
+    margin: 0;
+    border-top: unset;
+    border-left: 0.3rem solid transparent;
+}
+
+.mobile-menu__main .menu__item:before {
+    top: 0;
+    background-image: linear-gradient(to right, #47aa01 -100%, transparent 40%);
+}
+
+.topbar-profile__deposit--mobile {
+    justify-self: baseline;
+    margin: 1.25em;
+}
+
+.social-links--mobile {
+    margin: 2em 0;
+    position: absolute;
+    left: -2%;
+    top: 3.5em;
+}
+
+@media screen and (max-width: 600px) {
+    .market-services, .market-filters {
+        display: grid;
+    }
+    .market-services__section, a.copyright__link, .stdf2-game-bets__skins {
+        margin: 0;
+    }
+    .market-services {
+        grid-gap: 2em 0;
+    }
+    .market-filters {
+        grid-gap: 2em 0;
+        justify-content: center;
+    }
+    .stdf2-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5vw 0;
+    }
+    .copyright--mobile {
+        display: grid;
+        grid-gap: 0.5em;
+    }
+    .copyright--mobile .copyright__text {
+        display: unset;
+        margin-top: 2em;
+    }
+    .stdf2-game-aspect--right, .stdf2-game__details--centred {
+        margin-right: 0;
+    }
+    .stdf2-game__details--grid {
+        display: grid;
+        justify-content: stretch;
+    }
+    .stdf2-game__details--grid .stdf2-game__deposit {
+        width: auto;
+        margin: 0 3em;
+        margin-top: 1.5em;
+    }
+    .stdf2-game-bets__text--mobile {
+        display: grid;
+        margin-bottom: 1em;
+    }
+    .stdf2-game-bets__text--mobile .stdf2-game-bets__text--right {
+        display: none;
+        margin: 1em 0;
+    }
+    .paysys {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-gap: 5vw 0;
+        justify-items: flex-start;
+        margin-top: 5em;
+        margin-bottom: 5em;
+        padding: 0;
+    }
+    .stdf2-game-bets__bet {
+        display: grid;
+        grid-gap: 0.25em;
+    }
+    .table {
+        font-size: 0.65em;
+    }
+    .popup-window {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 3vw;
+    }
 }
