@@ -252,7 +252,7 @@ main .sidebar, .topbar .menu, .topbar .topbar-profile, .topbar .topbar__tools .t
     display: grid;
     align-content: baseline;
     position: fixed;
-    top: 4.9em;
+    top: 4.8em;
     right: 0;
     bottom: 0;
     height: 100vh;
@@ -275,7 +275,6 @@ main .sidebar, .topbar .menu, .topbar .topbar-profile, .topbar .topbar__tools .t
 }
 
 .topbar-profile__deposit--mobile {
-    justify-self: baseline;
     margin: 1.25em;
 }
 

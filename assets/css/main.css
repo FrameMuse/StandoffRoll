@@ -238,7 +238,7 @@ button, input[type="submit"] {
 }
 
 .menu__item:hover, .menu__item--selected, .menu--bottom .menu__item--selected {
-    border-color: #47aa01;
+    border-color: #47aa01 !important;
 }
 
 .menu__item:last-child {
